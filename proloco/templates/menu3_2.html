@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- code by webdevtrick ( https://webdevtrick.com ) -->
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>SAN PIERO A SIEVE</title>
+
+   <link rel="stylesheet" type="text/css" href="static/css/menu3.css">
+</head>
+<body>
+<nav>
+  <ul class="nav">
+
+    {%for menus in menu%}
+    <li><a href="#">{{menus[4]}}</a>
+
+
+      <ul>
+
+
+			<ul>
+              <li><a href="#">Ray</a></li>
+               {%for submenus in submenu%}
+              {%if menus[1] == submenus[2]:%}
+			<li  >
+				<a href="{{submenus[6]}}">{{submenus[4]}}</a>
+
+			</li>
+              {%endif%}
+              {%endfor%}
+			</ul>
+
+
+      </ul>
+
+
+    </li>
+{%endfor%}
+  </ul>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pro Loco San Piero</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="static/css/dropdowns.css">
+	<link rel="stylesheet" type="text/css" href="static/css/dropdowns-skin-discrete.css">
+
+</head>
+<body>
+<div class="dropdowns">
+
+<a class="toggleMenu" href="#">Menu</a>
+
+	<ul class="nav">
+{%for menus in menu%}
+	<li  class="test">
+		<a style="border-style: solid; border-width: thin; margin-right: 30px;"  href="{{menus[6]}}">{{menus[4]}} </a>
+
+			{%for submenus in submenu%}
+            {%if menus[1] == submenus[2]:%}
+			<ul>
+			<li  >
+				<a style="margin-left: 12%;" href="{{submenus[6]}}">{{submenus[4]}}</a>
+
+			</li>
+			</ul>
+			{%endif%}
+
+            {%endfor%}
+			</li>
+
+{%endfor%}
+</ul>
+
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="static/js/dropdowns.js"></script>
+<script>
+	$(".dropdowns").dropdowns();
+</script>
+</body>
+</html>

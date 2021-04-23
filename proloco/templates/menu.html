@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pretty Simple Responsive Dropdown Navigation Demo</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<!-- css files -->
+	<link rel="stylesheet" href="static/css/menu.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- js files -->
+<style>
+.content { margin:50px auto; max-width:728px; line-height:1.7}
+</style>
+
+</head>
+<body>
+	<!-- header starts -->
+	<header>
+		<!-- responsive nav bar -->
+		<div class="nav-bar">
+			<a href=""><i class="fa fa-bars"></i><span>Menu</span></a>
+		</div>
+		<!-- navigation -->
+		<nav>
+
+			<ul>
+				{%for menus in menu%}
+				<li class="sub-menu">
+
+					<a href="{{menus[6]}}"><i class="fa fa-street-view"></i>{{menus[4]}}  <i class="fa fa-angle-down"></i></a>
+					<!-- children nav -->
+					<ul class="children">
+						{%for submenus in submenu%}
+                		{%if menus[1] == submenus[2]:%}
+							<li><a href="{{submenus[6]}}"><span>-</span> {{submenus[4]}}</a></li>
+						{%endif%}
+           				{%endfor%}
+					</ul>
+
+				</li>
+ 				{%endfor%}
+
+			</ul>
+
+		</nav> <!-- navigation end -->
+
+	</header> <!-- header end -->
+
+	<!-- body contents -->
+	<div class="content">
+
+      <div class="jquery-script-ads"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2783044520727903";
+/* jQuery_demo */
+google_ad_slot = "2780937993";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+	<script src="js/main.js"></script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

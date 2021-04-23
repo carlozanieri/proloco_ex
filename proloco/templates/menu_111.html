@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Script Tutorials" />
+        <title>Whirling dropdown menu | Script Tutorials</title>
+
+        <!-- add styles -->
+        <link href="static/css/main.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div class="container" id="main" role="main">
+            <ul class="menu">
+               {%for menus in menu%}
+                <li><a href="{{menus[6]}}">{{menus[4]}}</a>
+
+                    <ul class="submenu">
+                        {%for submenus in submenu%}
+                        {%if menus[1] == submenus[2]:%}
+                        <li><a href="{{submenus[6]}}">{{submenus[4]}}</a></li>
+                       {%endif%}
+           				{%endfor%}
+                    </ul>
+                </li>
+               {%endfor%}
+            </ul>
+        </div>
+    </body>
+</html>

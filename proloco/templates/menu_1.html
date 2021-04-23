@@ -1,0 +1,80 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Responsive Web Site</title>
+
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- JavaScript -->
+    <script src="jquery-1.7.1.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+
+		//When btn is clicked
+		$(".btn-responsive-menu").click(function() {
+			$("#mainmenu").toggleClass("show");
+
+		});
+
+    });
+    </script>
+
+    <!-- Style -->
+    <link href="style.css" rel="stylesheet" />
+    <link href="static/css/responsive.css" rel="stylesheet" />
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+<div id="wrapper">
+
+    <header id="header">
+
+        <h1 id="site-title"><a href="#">Responsive Menu</a></h1>
+
+        <div class="btn-responsive-menu">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </div>
+
+    </header> <!-- #header -->
+
+    <div id="mainmenu">
+	 	<ul>
+        	<li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+	</div> <!-- #mainmenu -->
+
+	<div id="main">
+
+        <!-- Prompt IE 6 and 7 users to install Chrome Frame:		chromium.org/developers/how-tos/chrome-frame-getting-started -->
+        <!--[if lt IE 8]>
+            <p class="chromeframe alert alert-warning">Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+        <![endif]-->
+
+        <h2>Questo è un esempio di menù Responsive. </h2>
+        <p>Quando la larghezza dello schermo è sotto i 767px, il menu viene nascosto e ottimizzato per Smartphone e Tablet. Ridimensiona la finestra per vedere il menu in azione.</p>
+
+	</div> <!-- #main -->
+
+</div> <!-- #wrapper -->
+
+</body>
+</html>
+
+
+
