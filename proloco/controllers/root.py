@@ -14,7 +14,7 @@ from tgext.admin.controller import AdminController
 
 from proloco.lib.base import BaseController
 from proloco.controllers.error import ErrorController
-
+from proloco.Connect import Connect
 __all__ = ['RootController']
 
 
@@ -117,3 +117,9 @@ class RootController(BaseController):
         """
         flash(_('We hope to see you soon!'))
         return HTTPFound(location=came_from)
+
+    @expose('proloco.templates.home')
+    def display_home(self,thing_to_say='hello', nome=Connect.conta("", "2020-03-03", "2020-12-27"),
+                               menu=Connect.menu(""), submenu=Connect.submnu("")):
+
+        return dict(page='home')

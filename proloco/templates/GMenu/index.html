@@ -8,11 +8,11 @@
 		<meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website" />
 		<meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu" />
 		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="static/GMenu/favicon.ico">
-		<link rel="stylesheet" type="text/css" href="static/GMenu/css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="static/GMenu/css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="static/GMenu/css/component.css" />
-		<script src="GMenu/js/modernizr.custom.js"></script>
+		<link rel="shortcut icon" href="${tg.url('/static/GMenu/favicon.ico')">
+		<link rel="stylesheet" type="text/css" href="${tg.url('/static/GMenu/css/normalize.css')" />
+		<link rel="stylesheet" type="text/css" href="${tg.url('/static/GMenu/css/demo.css')" />
+		<link rel="stylesheet" type="text/css" href="${tg.url('/static/GMenu/css/component.css')" />
+		<script src="G${tg.url('/Menu/js/modernizr.custom.js')"></script>
 	</head>
 
 		<div class="container">
@@ -45,8 +45,8 @@
 
 			</ul>
 		</div><!-- /container -->
-		<script src="static/GMenu/js/classie.js"></script>
-		<script src="static/GMenu/js/gnmenu.js"></script>
+		<script src="${tg.url('/static/GMenu/js/classie.js')"></script>
+		<script src="${tg.url('/static/GMenu/js/gnmenu.js')"></script>
 		<script>
 			new gnMenu( document.getElementById( 'gn-menu' ) );
 		</script>
