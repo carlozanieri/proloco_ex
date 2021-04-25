@@ -1,64 +1,53 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>Google Nexus Website Menu</title>
-		<meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website" />
-		<meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="GMenu/favicon.ico"/>
-		<link rel="stylesheet" type="text/css" href="GMenu/css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="GMenu/css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="GMenu/css/component.css" />
-		<script src="GMenu/js/modernizr.custom.js"></script>
-	</head>
-	<body>
-		<div class="container">
-			<ul id="gn-menu" class="gn-menu-main">
-				<li class="gn-trigger">
-					<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
-					<nav class="gn-menu-wrapper">
-						<div class="gn-scroller">
-							<ul class="gn-menu">
-								<li class="gn-search-item">
-									<input placeholder="Search" type="search" class="gn-search"/>
-									<a class="gn-icon gn-icon-search"><span>Search</span></a>
-								</li>
-								<li>
-									<a class="gn-icon gn-icon-download">Downloads</a>
-									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-illustrator">Vector Illustrations</a></li>
-										<li><a class="gn-icon gn-icon-photoshop">Photoshop files</a></li>
-									</ul>
-								</li>
-								<li><a class="gn-icon gn-icon-cog">Settings</a></li>
-								<li><a class="gn-icon gn-icon-help">Help</a></li>
-								<li>
-									<a class="gn-icon gn-icon-archive">Archives</a>
-									<ul class="gn-submenu">
-										<li><a class="gn-icon gn-icon-article">Articles</a></li>
-										<li><a class="gn-icon gn-icon-pictures">Images</a></li>
-										<li><a class="gn-icon gn-icon-videos">Videos</a></li>
-									</ul>
-								</li>
-							</ul>
-						</div><!-- /gn-scroller -->
-					</nav>
-				</li>
-				<li><a href="http://tympanus.net/codrops">Codrops</a></li>
-				<li><a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/HeaderEffects/"><span>Previous Demo</span></a></li>
-				<li><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=16030"><span>Back to the Codrops Article</span></a></li>
-			</ul>
-			<header>
-				<h1>Google Nexus Website Menu <span>A sidebar menu as seen on the <a href="http://www.google.com/nexus/index.html">Google Nexus 7</a> page</span></h1>	
-			</header> 
-		</div><!-- /container -->
-		<script src="GMenu/js/classie.js"></script>
-		<script src="GMenu/js/gnmenu.js"></script>
-		<script>
-			new gnMenu( document.getElementById( 'gn-menu' ) );
-		</script>
-	</body>
+<html py:extends="master.xhtml" py:strip="True">
+    <head py:block="head" py:strip="True">
+        <title py:block="master_title">Welcome to TurboGears 2.4, standing on the shoulders of giants, since 2007</title>
+    </head>
+
+    <body py:block="body" py:strip="True">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="jumbotron">
+            <h1>Welcome to TurboGears 2.4</h1>
+            <p>If you see this page it means your installation was successful!</p>
+            <p>TurboGears 2 is rapid web application development toolkit designed to make your life easier.</p>
+            <p>
+              <a class="btn btn-primary btn-lg" href="http://www.turbogears.org" target="_blank">
+                ${h.icon('book')} Learn more
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 hidden-xs hidden-sm">
+          <a class="btn btn-info btn-sm active" href="http://turbogears.readthedocs.io/en/latest">${h.icon('book')} TG2 Documentation</a> <span class="label label-success">new</span><em> Get Started</em><br/>
+            <br/>
+          <a class="btn btn-info btn-sm active" href="http://turbogears.readthedocs.io/en/latest/cookbook/cookbook.html">${h.icon('book')} TG2 CookBook</a><em> Read the Cookbook</em> <br/>
+            <br/>
+          <a class="btn btn-info btn-sm active" href="http://groups.google.com/group/turbogears">${h.icon('comment')} Join the Mail List</a> <em>for help/discussion</em><br/>
+            <br/>
+          <a class="btn btn-info btn-sm active" href="http://runnable.com/TurboGears">${h.icon('play')} Play on Runnable</a> <em>for basic examples</em><br/>
+            <br/>
+          <a class="btn btn-info btn-sm active" href="http://stackoverflow.com/questions/tagged/turbogears2">${h.icon('search')} Search Stackoverflow</a> <em>for questions</em>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Code your data model</h3>
+          <p> Design your data <code>model</code>, Create the database, and Add some bootstrap data.</p>
+        </div>
+
+        <div class="col-md-4">
+          <h3>Design your URL architecture</h3>
+          <p> Decide your URLs, Program your <code>controller</code> methods, Design your
+            <code>templates</code>, and place some static files (CSS and/or Javascript). </p>
+        </div>
+
+        <div class="col-md-4">
+          <h3>Distribute your app</h3>
+          <p> Test your source, Generate project documents, Build a distribution.</p>
+        </div>
+      </div>
+
+      <em class="pull-right small"> Thank you for choosing TurboGears.</em>
+    </body>
 </html>

@@ -1,23 +1,26 @@
-<html  py:strip="True">
-  <head py:block="head" py:strip="True">
-    <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <link rel="shortcut icon" href="${tg.url('/static/GMenu/favicon.ico')}"/>
-      <link rel="stylesheet" type="text/css" href="${tg.url('/static/GMenu/css/normalize.css')}" />
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Google Nexus Website Menu</title>
+		<meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website" />
+		<meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="${tg.url('/static/favicon.ico')}"/>
+		<link rel="stylesheet" type="text/css" href="${tg.url('/static/GMenu/css/normalize.css')}" />
 		<link rel="stylesheet" type="text/css" href="${tg.url('/static/GMenu/css/demo.css')}" />
 		<link rel="stylesheet" type="text/css" href="${tg.url('/static/GMenu/css/component.css')}" />
-  <script src="${tg.url('/static/Menu/js/modernizr.custom.js')}"></script>
-    </head>
-
-  <body>
-<?python
+		<script src="${tg.url('/static/GMenu/js/modernizr.custom.js')}"></script>
+	</head>
+	<?python
 from proloco.Connect import Connect
 menu=Connect.menu("")
 submenu=Connect.submnu("")
 
 ?>
-   <div class="container">
+		<div class="container">
 			<ul style="margin-left:0;" id="gn-menu" class="gn-menu-main">
 				<li class="gn-trigger" >
 					<a class="gn-icon gn-icon-menu" ><span>Menu</span></a>
@@ -27,10 +30,20 @@ submenu=Connect.submnu("")
 
 								<li py:for="menus in menu">
 									<a href="${ menus[6] }">${menus[4]}</a>
-      							</li>
+
+
+									<ul class="gn-submenu">
+
+
+									<li py:for="submenus in submenu" py:if="menus[1] == submenus[2]">
+										<a href="${submenus[6]}" style="color:green; margin-left:20%;"><span></span> ${submenus[4]}</a>
+									</li>
+
+
 
 									</ul>
-
+							</li>
+							</ul>
 						</div>
 					</nav>
 				</li>
@@ -38,13 +51,11 @@ submenu=Connect.submnu("")
 				<li><a  href="/"><span></span></a></li>
 
 			</ul>
-		</div>
-		<script src="${tg.url('/static/GMenu/js/classie.js')}"/>
-		<script src="${tg.url('/static/GMenu/js/gnmenu.js')}"/>
+		</div><!-- /container -->
+		<script src="${tg.url('static/GMenu/js/classie.js')}"></script>
+		<script src="${tg.url('/static/GMenu/js/gnmenu.js')}"></script>
 		<script>
 			new gnMenu( document.getElementById( 'gn-menu' ) );
 		</script>
 
-
-  </body>
 </html>

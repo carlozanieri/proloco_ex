@@ -9,16 +9,10 @@
   <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/bootstrap.min.css')}" />
   <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/style.css')}" />
 
- <py:include href = "menu.xhtml" />
+  <py:block name="head"></py:block>
 </head>
 
 <body>
-<?python
-from proloco.Connect import Connect
-menu=Connect.menu("")
-submenu=Connect.submnu("")
-
-?>
   <!-- Navbar -->
   <nav class="navbar navbar-default">
     <div class="navbar-header">
@@ -36,9 +30,10 @@ submenu=Connect.submnu("")
 
     <div class="collapse navbar-collapse" id="navbar-content">
       <ul class="nav navbar-nav">
-        <li py:for="menus in menu">
-									<a href="${ menus[6] }">${menus[4]}</a>
-      							</li>
+        <li class="${('', 'active')[self.defined('page') and page=='index']}"><a href="${tg.url('/')}">Welcome</a></li>
+        <li class="${('', 'active')[self.defined('page') and page=='about']}"><a href="${tg.url('/about')}">About</a></li>
+        <li class="${('', 'active')[self.defined('page') and page=='data']}"><a href="${tg.url('/data')}">Serving Data</a></li>
+        <li class="${('', 'active')[self.defined('page') and page=='environ']}"><a href="${tg.url('/environ')}">WSGI Environment</a></li>
       </ul>
       <ul py:if="tg.auth_stack_enabled" class="nav navbar-nav navbar-right">
         <li py:if="not request.identity"><a href="${tg.url('/login')}">Login</a></li>
