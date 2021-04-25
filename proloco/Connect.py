@@ -6,8 +6,8 @@ import os
 import time
 import logging
 import MySQLdb
-from PyQt5.QtGui import *
-from PyQt5.QtWidgets import *
+#from PyQt5.QtGui import *
+#from PyQt5.QtWidgets import *
 import tornado.escape
 import smtplib
 import codecs
