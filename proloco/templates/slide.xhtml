@@ -1,19 +1,15 @@
 <html py:extends="master.xhtml" py:strip="True">
   <head py:block="head" py:strip="True">
 
-     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org" />
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" > 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title></title>
-    <meta name="description" content="Camera a free jQuery slideshow with many effects, transitions, adaptive layout, easy to customize, using canvas and mobile ready"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--///////////////////////////////////////////////////////////////////////////////////////////////////
-    //
-    //		Styles
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////////////////--> 
-    <link rel='stylesheet' id='camera-css'  href="${tg.url('/static/css/camera.css')}" type='text/css' media='all'>
+    <meta name="description" content="Camera a free jQuery slideshow with many effects, transitions, adaptive layout, easy to customize, using canvas and mobile ready"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel='stylesheet' id='camera-css'  href="${tg.url('/static/css/camera.css')}" type='text/css' media='all'/>
     <style>
 		body {
 			margin: 0;
@@ -65,8 +61,7 @@
 			});
 		});
 	</script>
- 
-</head>
+ </head>
 <body>
 
 	<div class="camera_wrap_1" >
@@ -96,7 +91,7 @@
                     It supports captions, HTML elements and videos and <em>it's validated in HTML5</em> (<a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.pixedelic.com%2Fplugins%2Fcamera%2F&amp;charset=%28detect+automatically%29&amp;doctype=Inline&amp;group=0&amp;user-agent=W3C_Validator%2F1.2" target="_blank">have a look</a>)
                 </div>
             </div>
-            <div data-thumb="${tg.url('/static/images/slides/thumbs/tree.jpg')}" data-src="static/images/slides/tree.jpg')}">
+            <div data-thumb="${tg.url('/static/images/slides/thumbs/tree.jpg')}" data-src="${tg.url('/static/images/slides/tree.jpg')}">
                 <div class="camera_caption fadeFromBottom">
                     Different color skins and layouts available, <em>fullscreen ready too</em>
                 </div>
