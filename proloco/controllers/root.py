@@ -119,6 +119,6 @@ class RootController(BaseController):
         return HTTPFound(location=came_from)
 
     @expose('proloco.templates.home')
-    def home(self):
+    def home(self,thing_to_say='hello', nome=Connect.conta("", "2020-03-03", "2020-12-27"),menu=Connect.menu(""), submenu=Connect.submnu("")):
 
         return dict(page='home',thing_to_say='hello', nome=Connect.conta("", "2020-03-03", "2020-12-27"),menu=Connect.menu(""), submenu=Connect.submnu(""))
