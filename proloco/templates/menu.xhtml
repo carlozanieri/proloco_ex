@@ -7,7 +7,7 @@
 		<title>Google Nexus Website Menu</title>
 		<meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website" />
 		<meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu" />
-		<meta name="author" content="Codrops" />
+		<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 		<link rel="shortcut icon" href="${tg.url('/static/favicon.ico')}"/>
 		<link rel="stylesheet" type="text/css" href="${tg.url('/static/GMenu/css/normalize.css')}" />
 		<link rel="stylesheet" type="text/css" href="${tg.url('/static/GMenu/css/demo.css')}" />
@@ -29,7 +29,8 @@ submenu=Connect.submnu("")
 							<ul class="gn-menu">
 
 								<li py:for="menus in menu">
-									<a href="${ menus[6] }">${menus[4]}</a>
+
+									<a href="${ menus[6] }" class="gn-icon gn-icon-help"><i class="fas fa-band-aid"></i>${menus[4]}</a>
 
 
 									<ul class="gn-submenu">
