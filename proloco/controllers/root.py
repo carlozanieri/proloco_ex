@@ -43,7 +43,7 @@ class RootController(BaseController):
     @expose('proloco.templates.index')
     def index(self):
         """Handle the front-page."""
-        return dict(page='index')
+        return dict(page='home')
     @expose('proloco.templates.about')
     def about(self):
         """Handle the 'about' page."""
