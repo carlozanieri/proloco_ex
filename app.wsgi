@@ -1,8 +1,8 @@
-APP_CONFIG = "/home/carlo/proloco/proloco/production.ini"
+APP_CONFIG = "/srv/http/proloco/proloco/production.ini"
 
 #Setup logging
-import logging.config
-logging.config.fileConfig(APP_CONFIG)
+#import logging.config
+#logging.config.fileConfig(APP_CONFIG)
 
 #Load the application
 from paste.deploy import loadapp
