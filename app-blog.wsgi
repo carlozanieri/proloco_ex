@@ -1,4 +1,4 @@
-APP_CONFIG = "/srv/http/proloco/proloco/production.ini"
+APP_CONFIG = "/var/www/html/proloco/proloco/production.ini"
 
 #Setup logging
 #import logging.config
