@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Unusual menu</title>
+    <link href="${tg.url('/static/css/unusual menu.css')}" rel="stylesheet" />
+    <script src="${tg.url('/static/js/jquery-3.1.1.min.js')}"></script>
+    <script src="${tg.url('/static/js/unusual menu.js')}"></script>
+    <py:block name="head"></py:block>
+</head>
+
+<?python
+from proloco.Connect import Connect
+menu=Connect.menu("")
+submenu=Connect.submnu("")
+
+?>
+<body>
+    <nav>
+        <ul>
+
+            <li py:for="menus in menu">
+                <a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
+                <ul class="hidden">
+                    <li py:for="submenus in submenu" py:if="menus[1] == submenus[2]">
+                        <a href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+
+  </body>
+</html>
+
