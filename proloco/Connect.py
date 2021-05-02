@@ -165,7 +165,16 @@ class Connect:
         submenu = cursor.fetchall()
         #menu = primanota[1]["descrizione"]
         return submenu
+    def body(self, pagina):
 
+        db = MySQLdb.connect(options.mysql_host, options.mysql_user, options.mysql_password, options.mysql_database)
+        ##print(menu)
+        cursor = db.cursor()
+        cursor.execute("SELECT *  from entries where slug = '" + pagina + "'")
+
+        body = cursor.fetchone()
+        #menu = primanota[1]["descrizione"]
+        return body
     def cmd(self):
         ret = qApp.quit
 

@@ -13,11 +13,11 @@
 from proloco.Connect import Connect
 menu=Connect.menu("")
 submenu=Connect.submnu("")
-
+pagina=Connect.body("", "index")
 ?>
 <body>
  <center><h1 style="color:red;">Pro Loco San Piero a Sieve</h1></center>
-    <nav>
+ <nav>
         <ul>
 
             <li py:for="menus in menu">
@@ -31,14 +31,18 @@ submenu=Connect.submnu("")
 
         </ul>
     </nav>
-<center><li py:for="menus in menu">
-                <a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
-                <ul class="hidden">
-                    <li py:for="submenus in submenu" py:if="menus[1] == submenus[2]">
-                        <a href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
-                    </li>
-                </ul>
-            </li></center>
+
+
+          <center>  <p>
+
+
+                        <span>${pagina[5]}</span>
+
+            </p>
+
+          </center>
+
+
   </body>
 </html>
 
