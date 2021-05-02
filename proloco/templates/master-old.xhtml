@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta charset="${response.charset}" />
 
-  <title>Proloco San Piero</title>
+  <title py:block="master_title">ProLoco San Piero a Sieve</title>
   <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/bootstrap.min.css')}" />
   <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/style.css')}" />
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org" />
+    <meta name="description" content="Camera a free jQuery slideshow with many effects, transitions, adaptive layout, easy to customize, using canvas and mobile ready"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <link href="${tg.url('/css/unusual menu.css')}" rel="stylesheet" />
-    <script src="${tg.url('/javascript/jquery-3.1.1.min.js')}"/>
-    <script src="${tg.url('/javascript/unusual menu.js')}"/>
-  <py:block name="head"></py:block>
+    <link href="${tg.url('/static/css/unusual menu.css')}" rel="stylesheet" />
+    <script src="${tg.url('/static/js/jquery-3.1.1.min.js')}"></script>
+    <script src="${tg.url('/static/js/unusual menu.js')}"></script>
+    <py:block name="head"></py:block>
+
+    <py:block name="head"></py:block>
+
 </head>
 <?python
 from proloco.Connect import Connect
@@ -21,7 +28,6 @@ submenu=Connect.submnu("")
 
 ?>
 <body>
- <center><h1 style="color:red;">Pro Loco San Piero a Sieve</h1></center>
     <nav>
         <ul>
 
@@ -36,5 +42,6 @@ submenu=Connect.submnu("")
 
         </ul>
     </nav>
-</body>
+
+  </body>
 </html>

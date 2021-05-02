@@ -128,9 +128,13 @@ class RootController(BaseController):
         return dict(page='menu')
 
     @expose('proloco.templates.sanpiero')
-    def sanpieero(self):
+    def sanpiero(self):
+        """Handle the front-page."""
         return dict(page='sanpiero')
+
+
 #    @expose('proloco.templates.home')
+
 #    def home(self,thing_to_say='hello', nome=Connect.conta("", "2020-03-03", "2020-12-27"),menu=Connect.menu(""), submenu=Connect.submnu("")):#
 #
 #        return dict(page='home',thing_to_say='hello', nome=Connect.conta("", "2020-03-03", "2020-12-27"),menu=Connect.menu(""), submenu=Connect.submnu(""))
