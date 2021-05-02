@@ -1,19 +1,14 @@
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta charset="${response.charset}" />
-
-  <title>Proloco San Piero</title>
-  <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/bootstrap.min.css')}" />
-  <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/style.css')}" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Proloco San Piero</title>
     <link href="${tg.url('/css/unusual menu.css')}" rel="stylesheet" />
-    <script src="${tg.url('/javascript/jquery-3.1.1.min.js')}"/>
-    <script src="${tg.url('/javascript/unusual menu.js')}"/>
-  <py:block name="head"></py:block>
+    <script src="${tg.url('/javascript/jquery-3.1.1.min.js')}"></script>
+    <script src="${tg.url('/javascript/unusual menu.js')}"></script>
+    <py:block name="head"></py:block>
 </head>
+
 <?python
 from proloco.Connect import Connect
 menu=Connect.menu("")
@@ -36,5 +31,6 @@ submenu=Connect.submnu("")
 
         </ul>
     </nav>
-</body>
+  </body>
 </html>
+
