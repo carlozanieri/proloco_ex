@@ -40,11 +40,10 @@ class RootController(BaseController):
     def _before(self, *args, **kw):
         tmpl_context.project_name = "proloco"
 
-
-    @expose('proloco.templates.index')
+    @expose('proloco.templates.master')
     def index(self):
         """Handle the front-page."""
-        return dict(page='index')
+        return dict(page='master', pagina=Connect.body("", "index"))
     @expose('proloco.templates.about')
     def about(self):
         """Handle the 'about' page."""
@@ -127,10 +126,15 @@ class RootController(BaseController):
     def menu(self):
         return dict(page='menu')
 
-    @expose('proloco.templates.sanpiero')
+    @expose('proloco.templates.master')
+    def mugello(self):
+        """Handle the front-page."""
+        return dict(page='master', pagina=Connect.body("", "mugello"))
+
+    @expose('proloco.templates.master')
     def sanpiero(self):
         """Handle the front-page."""
-        return dict(page='sanpiero')
+        return dict(page='master', pagina=Connect.body("", "sanpiero"))
 
 
 #    @expose('proloco.templates.home')
