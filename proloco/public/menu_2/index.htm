@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html class="csstransforms no-csstransforms3d csstransitions"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-	<meta charset="UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Responsive Drop Down Menu jQuery CSS3 Using Icon Symbol</title>
-	<link rel="stylesheet" type="text/css" href="${tg.url('/menu_2/css/font-awesome.css')}"/>
-	<link rel="stylesheet" type="text/css" href="${tg.url('/menu_2/css/menu.css')}"/>
-
-	<script type="text/javascript" src="${tg.url('/menu_2/js/jquery.js')}"></script>
-	<script type="text/javascript" src="${tg.url('/menu_2/js/function.js')}"></script>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+    
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/function.js"></script>
 
 </head>
-<?python
-from proloco.Connect import Connect
-menu=Connect.menu("")
-submenu=Connect.submnu("")
-
-?>
 <body>
-<div style="background:#0099cc; font-size:22px; text-align:center; color:#FFF; font-weight:bold; height:100px; padding-top:50px;">ProLoco San Pierp a Sieve</div>
+<div style="background:#0099cc; font-size:22px; text-align:center; color:#FFF; font-weight:bold; height:100px; padding-top:50px;">Responsive Drop Down Menu jQuery CSS3 Using Icon Symbol</div>
 <div id="wrap">
 	<header>
 		<div class="inner relative">
-			<a class="logo" href="http://www.freshdesignweb.com"><img src="${tg.url('/menu_2/images/logo.png')}" alt="fresh design web"/></a>
+			<a class="logo" href="http://www.freshdesignweb.com"><img src="images/logo.png" alt="fresh design web"></a>
 			<a id="menu-toggle" class="button dark" href="#"><i class="icon-reorder"></i></a>
 			<nav id="navigation">
 				<ul id="main-menu">
 					<li class="current-menu-item"><a href="http://www.freshdesignweb.com">Home</a></li>
-					  <li py:for="menus in menu">
-                		<a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
+					<li class="parent">
+						<a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">Features</a>
 						<ul class="sub-menu">
-							 <li py:for="submenus in submenu" py:if="menus[1] == submenus[2]">
-                        <a href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
-                    	</li>
-						<!--		<a class="parent" href="#"><i class="icon-file-alt"></i> Pages</a>
+							<li><a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html"><i class="icon-wrench"></i> Elements</a></li>
+							<li><a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html"><i class="icon-credit-card"></i>  Pricing Tables</a></li>
+							<li><a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html"><i class="icon-gift"></i> Icons</a></li>
+							<li>
+								<a class="parent" href="#"><i class="icon-file-alt"></i> Pages</a>
 								<ul class="sub-menu">
 									<li><a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">Full Width</a></li>
 									<li><a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">Left Sidebar</a></li>
 									<li><a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">Right Sidebar</a></li>
 									<li><a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">Double Sidebar</a></li>
 								</ul>
-							</li>-->
+							</li>
 						</ul>
 					</li>
-					<!--<li><a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">Portfolio</a></li>
+					<li><a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">Portfolio</a></li>
 					<li class="parent">
 						<a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">Blog</a>
 						<ul class="sub-menu">
@@ -54,12 +49,11 @@ submenu=Connect.submnu("")
 							<li><a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">Single Post</a></li>
 						</ul>
 					</li>
-					<li><a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">Contact</a></li>-->
+					<li><a href="http://www.freshdesignweb.com/responsive-drop-down-menu-jquery-css3-using-icon-symbol.html">Contact</a></li>
 				</ul>
 			</nav>
 			<div class="clear"></div>
 		</div>
-	</header>
-</div>
-</body>
-</html>
+	</header>	
+</div>    
+</body></html>

@@ -1,147 +1,102 @@
-@use postcss-preset-env;
-@use postcss-nested;
 
-[hidden] { display: none; }
 
-body {
-  overflow: hidden;
-  font-family: sans-serif;
-}
+    body, ul, li,a {    
+        margin: 0;    
+        padding: 0;    
+        list-style: none;    
+    }    
+    .menu{    
+        background: rgba(44, 62, 100, 0.99);    
+    }    
+    .menu a{    
+        display: block;    
+        text-decoration: none;    
+        padding: 20px 30px;    
+        color: #fff;    
+        border: 1px solid #000000;    
+    }    
+    .menu li{    
+        position: relative;    
+    }    
+    .menu li ul{    
+        display: block;    
+        background: rgba(255, 0, 0, 0.12);    
+        max-height: 0;    
+        overflow: hidden;    
+        transition: all 0.3s ease;    
+    }    
+    nav{    
+        transition: max-height 0.3s;    
+        overflow: hidden;    
+    }    
+    .menu-btn{    
+        background: #232d3b;    
+        text-align: center;    
+        cursor: s-resize;    
+    }    
+    .menu-btn img{    
+        vertical-align: middle;    
+        height: 50px;    
+    }    
+    .menu-open,    
+    .menu .open > ul{    
+        max-height: 2000px;    
+    }    
+    .menu .open > .more img{    
+        transform: rotate(-90deg);    
+    }    
+    .more img{    
+        height: 55px;    
+        transition: transform 0.3s;    
+    }    
+    .more{    
+        background: rgba(0, 0, 0, 0.38);    
+        float: right;    
+        min-width: 10%;    
+        cursor: move;    
+    } 
 
-@media ( max-width: 40rem ) {
-  .navigation button {
-    display: block;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    border: 0;
-    height: 32px;
-    width: 32px;
-    background: none;
-    color: #107db5;
-    font-size: 0rem;
-    padding: 0;
-    transition: 0.2s 0.5s color ease-in-out;
-
-    & svg {
-      display: block;
-      pointer-events: none;
-      stroke: currentcolor;
-      vertical-align: middle;
-      height: 32px;
-      width: 32px;
-      transition: 0.2s 0.5s stroke ease-in-out;
-    }
-
-    &::before {
-      content: ' ';
-      position: absolute;
-      border-radius: 200vh;
-      opacity: 0;
-      left: calc(-130vmax + 50%);
-      top: calc(-130vmax + 50%);
-      width: 260vmax;
-      height: 260vmax;
-      background: #107db5;
-      display: block;
-      z-index: -1;
-      transform: scale3d(0, 0, 0);
-      transform-origin: 50% 50%;
-      transition: 0.5s ease-in-out transform, 0.2s 0.4s ease-in-out opacity;
-    }
-
-    &[aria\-expanded=true] {
-      color: #fff;
-    }
-
-    &[aria\-expanded=true]::before {
-      opacity: 1;
-      transform: scale3d(1, 1, 1);
-      transition: 0.5s ease-in-out transform, 0.1s ease-in-out opacity;
-    }
-  }
-
-  #menu {
-    pointer-events: none;
-    list-style: none;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0;
-
-    & a {
-      text-decoration: none;
-      font-weight: bold;
-      color: #fff;
-      opacity: 0;
-      display: block;
-      transform: translateY(-10px);
-      transition: 0.2s 0.5s ease-out opacity, 0.2s 0.5s ease-out transform;
-    }
-
-    li:nth-child(2) a {
-      transition: 0.2s 0.7s ease-out opacity, 0.2s 0.7s ease-out transform;
-    }
-
-    li:nth-child(3) a {
-      transition: 0.2s 0.9s ease-out opacity, 0.2s 0.9s ease-out transform;
-    }
-
-    li:nth-child(4) a {
-      transition: 0.2s 1.1s ease-out opacity, 0.2s 1.1s ease-out transform;
-    }
-  }
-
-  #menu:not([hidden]) {
-    pointer-events: all;
-
-    & a {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-@media ( min-width: 40rem ) {
-  .navigation button { display: none }
-
-  #menu {
-    width: auto;
-    height: auto;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    list-style: none;
-    margin: 0;
-
-    & li {
-      padding: 1rem;
-
-      & a {
-        pointer-events: all;
-        opacity: 1;
-        transform: translateY(0);
-        font-weight: normal;
-        color: #107db5;
-        text-decoration: none;
-        background: linear-gradient(rgba(16, 125, 181, 0.15), rgba(16, 125, 181, 0.15));
-        background-size: 0 100%;
-        background-repeat: no-repeat;
-
-        padding: 4px;
-        margin: -4px;
-        border-radius: 2em;
-        transition:background .25s ease-out;
-
-        &:hover,
-        &:focus {
-          background-size: 100% 100%;
-        }
-      }
-    }
-  }
+@media all and (min-width: 900px){
+   nav{
+       max-height: 100%;
+       overflow: visible;
+   }
+   .menu-btn{
+       display: none;
+   }
+   .menu{
+       text-align: center;
+   }
+   .menu a{
+       width:9em;
+       background: #232d3b;
+   }
+   .menu a:hover{
+       background-color: #099;
+   }
+   .menu > li{
+       display: inline-block;
+       margin: 0 2px;
+   }
+   .menu li ul{
+       left: -9999px;
+       position:absolute;
+       overflow: visible;
+       -webkit-transition: all 0.1s ease;
+   }
+   .menu > li > ul ul{
+       top: 0;
+   }
+   .menu li:hover > ul{
+       left:100%;
+   }
+   .menu > li:hover > ul{
+       left: 0;
+   }
+   .menu .open > ul{
+       left:100%;
+   }
+   .menu > li.open > ul{
+       left: 0;
+   }
 }
