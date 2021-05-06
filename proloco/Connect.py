@@ -165,6 +165,16 @@ class Connect:
         submenu = cursor.fetchall()
         #menu = primanota[1]["descrizione"]
         return submenu
+    def submnu2(self):
+
+        db = MySQLdb.connect(options.mysql_host, options.mysql_user, options.mysql_password, options.mysql_database)
+        ##print(menu)
+        cursor = db.cursor()
+        cursor.execute("SELECT *  from menuweb where livello=4 ")
+
+        submenu2 = cursor.fetchall()
+        #menu = primanota[1]["descrizione"]
+        return submenu2
     def body(self, pagina):
 
         db = MySQLdb.connect(options.mysql_host, options.mysql_user, options.mysql_password, options.mysql_database)

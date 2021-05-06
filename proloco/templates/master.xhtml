@@ -1,47 +1,104 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Proloco San Piero</title>
-    <link href="${tg.url('/css/unusual menu.css')}" rel="stylesheet" />
-    <script src="${tg.url('/javascript/jquery-3.1.1.min.js')}"></script>
-    <script src="${tg.url('/javascript/unusual menu.js')}"></script>
-    <py:block name="head"></py:block>
-</head>
-<py:include href = "menu_2.xhtml" />
-<?python
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Multi-Level Push Menu - Demo 3</title>
+		<meta name="description" content="Multi-Level Push Menu: Off-screen navigation with multiple levels" />
+		<meta name="keywords" content="multi-level, menu, navigation, off-canvas, off-screen, mobile, levels, nested, transform" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="${tg.url('/menu_3/favicon.ico')}"/>
+		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_3/css/normalize.css')}" />
+		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_3/css/demo.css')}" />
+		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_3/css/icons.css')}" />
+		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_3/css/component.css')}" />
+		<script src="${tg.url('/menu_3/js/modernizr.custom.js')}"></script>
+	</head>
+	<?python
 from proloco.Connect import Connect
 menu=Connect.menu("")
 submenu=Connect.submnu("")
+submenu2=Connect.submnu2("")
 
 ?>
-<body>
- <center><h1 style="color:red;">Pro Loco San Piero a Sieve</h1></center>
- <nav>
-        <ul>
-    
-            <li py:for="menus in menu">
-                <a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
-                <ul class="hidden">
-                    <li py:for="submenus in submenu" py:if="menus[1] == submenus[2]">
-                        <a href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
-                    </li>
-                </ul>
-            </li>
+	<center><h1 style="color:red;">Pro Loco San Piero a Sieve</h1></center>
+	<body>
+		<div class="container" >
+			<!-- Push Wrapper -->
+			<div class="mp-pusher" id="mp-pusher">
 
-        </ul>
-    </nav>
+				<!-- mp-menu -->
+				<nav id="mp-menu" class="mp-menu" >
+					<div class="mp-level">
+						<h2 class="icon icon-world" style="position: absolute;top: 2px;	left: 0;	width: 40px;height: 6px;"></h2>
+
+						<ul>
+							<li py:for="menus in menu">
+                				<a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
+								<div class="mp-level">
+									<h2 class="icon icon-display">${menus[4]}</h2>
+									<a class="mp-back" href="#">back</a>
+									<ul>
+										<li py:for="submenus in submenu" py:if="menus[1] == submenus[2]">
+                        					<a href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
+											<!--<div class="mp-level">
+												<h2>M${submenus[4]}</h2>
+												<a class="mp-back" href="#">back</a>
+												<ul>
+													<li py:for="submenus2 in submenu2" >
+
+                        						<a py:if="submenus2[1] == submenus2[2]" href="${submenus2[6]}" ><span></span> ${submenus2[4]}</a>
+
+													</li>
+													<py:def function="evenness(n)">
+													<py:if test= "submenus2[1] == submenus2[2]">even></py:if><py:else>odd</py:else>
+													</py:def>
+												</ul>
+											</div> -->
+										</li>
+
+									</ul>
+								</div>
+							</li>
 
 
-          <center>  <p style="text-align: justify; margin:5% 12% 2% 12%;">
+						</ul>
+							
+					</div>
+
+				</nav>
 
 
-                        <span>${pagina[5]}</span>
+				<div class="scroller" style="margin-top:1%; margin-left:1%;"><!-- this is for emulating position fixed of the nav -->
+					<div class="scroller-inner" >
 
-            </p>
+						<div class="content clearfix">
+							<div >
+								<p style="position: absolute;top: 2px;	left: 0;width: 40px;height: 6px;"><a href="#" id="trigger" class="menu-trigger" >MENU</a></p>
+							<nav >
+									<center>  <p style="text-align: justify; margin:5% 12% 2% 12%;">
+         							<span>${pagina[5]}</span>
 
-          </center>
+            								</p>
+
+									</center>
+								</nav>
+							</div>
 
 
-  </body>
+						</div>
+					</div><!-- /scroller-inner -->
+				</div><!-- /scroller -->
+
+			</div><!-- /pusher -->
+
+		</div><!-- /container -->
+
+		<script src="${tg.url('/menu_3/js/classie.js')}"></script>
+		<script src="${tg.url('/menu_3/js/mlpushmenu.js')}"></script>
+		<script>
+			new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+		</script>
+	</body>
 </html>
