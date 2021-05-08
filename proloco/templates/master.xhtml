@@ -4,102 +4,96 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>ProLoco San Piero a Sieve</title>
-		<meta name="description" content="Multi-Level Push Menu: Off-screen navigation with multiple levels" />
-		<meta name="keywords" content="multi-level, menu, navigation, off-canvas, off-screen, mobile, levels, nested, transform" />
+		<title>Pro Loco San Piero</title>
+		<meta name="description" content="Responsive Multi-Level Menu: Space-saving drop-down menu with subtle effects" />
+		<meta name="keywords" content="multi-level menu, mobile menu, responsive, space-saving, drop-down menu, css, jquery" />
 		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="${tg.url('/menu_3/favicon.ico')}"/>
-		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_3/css/normalize.css')}" />
-		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_3/css/demo.css')}" />
-		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_3/css/icons.css')}" />
-		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_3/css/component.css')}" />
-		<script src="${tg.url('/menu_3/js/modernizr.custom.js')}"></script>
+		<link rel="shortcut icon" href="../favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_6/css/default.css')}" />
+		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_6/css/component.css')}" />
+		<script src="${tg.url('/menu_6/js/modernizr.custom.js')}"></script>
 	</head>
-<?python
+	<?python
 from proloco.Connect import Connect
 menu=Connect.menu("")
 submenu=Connect.submnu("")
 submenu2=Connect.submnu2("")
 
 ?>
-
 	<body>
-		<div class="container" >
-			<!-- Push Wrapper -->
-			<div class="mp-pusher" id="mp-pusher">
+		<div class="container demo-5">
+			<!-- Codrops top bar -->
 
-				<!-- mp-menu -->
-				<nav id="mp-menu" class="mp-menu" style=" color:#000000">
-					<div class="mp-level" style=" color:#000000">
-						<h2 class="icon icon-world" style="position: absolute;top: 2px;	left: 0;	width: 40px;height: 6px;">Menu</h2>
+			<header class="clearfix">
 
-						<ul>
+
+			<div>
+				<div>
+
+				</div>
+				<div>
+					<div id="dl-menu" class="dl-menuwrapper">
+						<button class="dl-trigger" >Open Menu</button>
+
+						<ul class="dl-menu">
 							<li py:for="menus in menu">
                 				<a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
-								<div class="mp-level">
-									<h2 class="icon icon-display">${menus[4]}</h2>
-									<a class="mp-back" href="#">back</a>
-									<ul>
-										<li py:for="submenus in submenu" py:if="menus[1] == submenus[2]">
+								<ul class="dl-submenu">
+									<li py:for="submenus in submenu" py:if="menus[1] == submenus[2]">
                         					<a href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
-											<!--<div class="mp-level">
-												<h2>M${submenus[4]}</h2>
-												<a class="mp-back" href="#">back</a>
-												<ul>
-													<li py:for="submenus2 in submenu2" >
-
-                        						<a py:if="submenus2[1] == submenus2[2]" href="${submenus2[6]}" ><span></span> ${submenus2[4]}</a>
-
-													</li>
-													<py:def function="evenness(n)">
-													<py:if test= "submenus2[1] == submenus2[2]">even></py:if><py:else>odd</py:else>
-													</py:def>
-												</ul>
-											</div> -->
-										</li>
-
-									</ul>
-								</div>
+										<!--<ul class="dl-submenu">
+											<li><a href="#">Shirts</a></li>
+											<li><a href="#">Jackets</a></li>
+											<li><a href="#">Chinos &amp; Trousers</a></li>
+											<li><a href="#">Jeans</a></li>
+											<li><a href="#">T-Shirts</a></li>
+											<li><a href="#">Underwear</a></li>
+										</ul>-->
+									</li>
+									<!--<li>
+										<a href="#">Women</a>
+										<ul class="dl-submenu">
+											<li><a href="#">Jackets</a></li>
+											<li><a href="#">Knits</a></li>
+											<li><a href="#">Jeans</a></li>
+											<li><a href="#">Dresses</a></li>
+											<li><a href="#">Blouses</a></li>
+											<li><a href="#">T-Shirts</a></li>
+											<li><a href="#">Underwear</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#">Children</a>
+										<ul class="dl-submenu">
+											<li><a href="#">Boys</a></li>
+											<li><a href="#">Girls</a></li>
+										</ul>
+									</li>-->
+								</ul>
 							</li>
 
 
 						</ul>
-							
 					</div>
-
-				</nav>
-
-
-				<div class="scroller" style="margin-top:1%; margin-left:1%;"><!-- this is for emulating position fixed of the nav -->
-					<div class="scroller-inner" >
-
-						<div class="content clearfix">
-							<div >
-								<p style="position: absolute;top: 2px;	left: 0;width: 40px;height: 6px;"><a href="#" id="trigger" class="menu-trigger" ></a><center><h1 style="color:#000000;">Pro Loco San Piero a Sieve</h1></center></p>
-							<nav >
-
-									<center>  <p style="text-align: justify; margin:5% 12% 2% 12%;color:red;">
+				</div>
+			</div>
+		</header>
+			<center>  <p style="text-align: justify; margin:5% 12% 2% 12%;color:red;">
          							<span>${pagina[5]}</span>
 
             								</p>
 
 									</center>
-								</nav>
-							</div>
-
-
-						</div>
-					</div><!-- /scroller-inner -->
-				</div><!-- /scroller -->
-
-			</div><!-- /pusher -->
-
 		</div><!-- /container -->
 
-		<script src="${tg.url('/menu_3/js/classie.js')}"></script>
-		<script src="${tg.url('/menu_3/js/mlpushmenu.js')}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="${tg.url('/menu_6/js/jquery.dlmenu.js')}"></script>
 		<script>
-			new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+			$(function() {
+				$( '#dl-menu' ).dlmenu({
+					animationClasses : { classin : 'dl-animate-in-4', classout : 'dl-animate-out-4' }
+				});
+			});
 		</script>
 	</body>
 </html>

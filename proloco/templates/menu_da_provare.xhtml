@@ -7,13 +7,11 @@
 		<title>ProLoco San Piero a Sieve</title>
 		<meta name="description" content="Multi-Level Push Menu: Off-screen navigation with multiple levels" />
 		<meta name="keywords" content="multi-level, menu, navigation, off-canvas, off-screen, mobile, levels, nested, transform" />
-		<meta name="author" content="Codrops" />
+
 		<link rel="shortcut icon" href="${tg.url('/menu_3/favicon.ico')}"/>
 		<link rel="stylesheet" type="text/css" href="${tg.url('/css/stile.css')}" />
-		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_3/css/demo.css')}" />
-		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_3/css/icons.css')}" />
-		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_3/css/component.css')}" />
-		<script src="${tg.url('/menu_3/js/modernizr.custom.js')}"></script>
+
+
 
     </head>
     <?python
@@ -25,9 +23,9 @@ submenu2=Connect.submnu2("")
 ?>
 <body>
 <div class="container">
- <h1>
-    <a href="#menu">MENU</a>
- </h1>
+
+    <a class="gn-icon gn-icon-menu" style="position: absolute;top: 2px;	left: 0; font-size:12px;	height: 6px;" href="#menu">MENU</a>
+
     
 <div class="popover" id="menu">
  <div class = 'content'>
@@ -37,10 +35,10 @@ submenu2=Connect.submnu2("")
       
       <div class = 'nav_list_item'>
 	  <li py:for="menus in menu">
-          <a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
+          <a href="${ menus[6] }" class="" style=" font-size:14px; color:red">${menus[4]}</a>
       <ul>
 										<li py:for="submenus in submenu" py:if="menus[1] == submenus[2]">
-                        					<a href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
+                        					<a style=" font-size:12px;" href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
 
 										</li>
 

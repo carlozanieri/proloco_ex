@@ -14,7 +14,7 @@
 }
 
 h1 a {
-  font-size: 80px;
+  font-size: 14px;
   color: #BF2E97;
   text-decoration: none;
   text-transform: uppercase;
@@ -55,7 +55,7 @@ h1 a {
 
 .nav_list a {
   text-decoration: none;
-  font-size: 50px;
+  font-size: 12px;
   color: #fff;
 }
 
@@ -102,7 +102,7 @@ h1 a {
   position: absolute;
   display: flex;
   z-index: 1;
-  font-size: 30px;
+  font-size: 12px;
   align-items: center;
   justify-content: center;
   background-color: #BF2E97;
