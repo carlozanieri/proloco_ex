@@ -14,79 +14,6 @@
 		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_3/css/icons.css')}" />
 		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_3/css/component.css')}" />
 		<script src="${tg.url('/menu_3/js/modernizr.custom.js')}"></script>
-	<style>
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-        }
-
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 10px;
-        }
-
-        .dropdown {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            width: 100px;
-            background-color: #0abf53;
-        }
-
-        .dropdown li {
-            position: relative;
-        }
-
-        .dropdown li a {
-            color: #ffffff;
-            text-align: center;
-            text-decoration: none;
-            display: block;
-            padding: 10px;
-        }
-
-        .dropdown li ul {
-            position: absolute;
-            top: 100%;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            display: none;
-            line-height: normal;
-            background-color: #333;
-        }
-
-        .dropdown li ul li a {
-            text-align: left;
-            color: #000000;
-            font-size: 14px;
-            padding: 10px;
-            display: block;
-            white-space: nowrap;
-        }
-
-        .dropdown li ul li a:hover {
-            background-color: #0abf53;
-            color: #ffffff;
-        }
-
-        .dropdown li ul li ul {
-            left: 100%;
-            top: 0;
-        }
-
-        ul li:hover>a {
-            background-color: #0abf53;
-            color: black !important;
-        }
-
-        ul li:hover>ul {
-            display: block;
-        }
-    </style>
 	</head>
 <?python
 from proloco.Connect import Connect
@@ -96,31 +23,83 @@ submenu2=Connect.submnu2("")
 
 ?>
 
-	<body style="background-color: #0abf53;">
-	<div>
-		<ul class="dropdown">
-        <li><a href="#">Menu</a>
-            <ul>
-               <li py:for="menus in menu">
-                   <a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
-                <ul>
-                    <li py:for="submenus in submenu" py:if="menus[1] == submenus[2]">
-                        <a href="${submenus[6]}" ><span></span> ${submenus[4]}</a></li>
-                </ul>
-               </li>
+	<body>
+		<div class="container" >
+			<!-- Push Wrapper -->
+			<div class="mp-pusher" id="mp-pusher">
+
+				<!-- mp-menu -->
+				<nav id="mp-menu" class="mp-menu" style=" color:#000000">
+					<div class="mp-level" style=" color:#000000">
+						<h2 class="icon icon-world" style="position: absolute;top: 2px;	left: 0;	width: 40px;height: 6px;">Menu</h2>
+
+						<ul>
+							<li py:for="menus in menu">
+                				<a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
+								<div class="mp-level">
+									<h2 class="icon icon-display">${menus[4]}</h2>
+									<a class="mp-back" href="#">back</a>
+									<ul>
+										<li py:for="submenus in submenu" py:if="menus[1] == submenus[2]">
+                        					<a href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
+											<!--<div class="mp-level">
+												<h2>M${submenus[4]}</h2>
+												<a class="mp-back" href="#">back</a>
+												<ul>
+													<li py:for="submenus2 in submenu2" >
+
+                        						<a py:if="submenus2[1] == submenus2[2]" href="${submenus2[6]}" ><span></span> ${submenus2[4]}</a>
+
+													</li>
+													<py:def function="evenness(n)">
+													<py:if test= "submenus2[1] == submenus2[2]">even></py:if><py:else>odd</py:else>
+													</py:def>
+												</ul>
+											</div> -->
+										</li>
+
+									</ul>
+								</div>
+							</li>
 
 
+						</ul>
+							
+					</div>
 
-            </ul>
-        </li>
-    </ul>
+				</nav>
 
-									<center>  <p style="text-align: justify; margin:5% 12% 2% 12%;">
+
+				<div class="scroller" style="margin-top:1%; margin-left:1%;"><!-- this is for emulating position fixed of the nav -->
+					<div class="scroller-inner" >
+
+						<div class="content clearfix">
+							<div >
+								<p style="position: absolute;top: 2px;	left: 0;width: 40px;height: 6px;"><a href="#" id="trigger" class="menu-trigger" ></a><center><h1 style="color:#000000;">Pro Loco San Piero a Sieve</h1></center></p>
+							<nav >
+
+									<center>  <p style="text-align: justify; margin:5% 12% 2% 12%;color:red;">
          							<span>${pagina[5]}</span>
 
             								</p>
 
 									</center>
-</div>
+								</nav>
+							</div>
+
+
+						</div>
+					</div><!-- /scroller-inner -->
+				</div><!-- /scroller -->
+
+			</div><!-- /pusher -->
+
+		</div><!-- /container -->
+
+		<script src="${tg.url('/menu_3/js/classie.js')}"></script>
+		<script src="${tg.url('/menu_3/js/mlpushmenu.js')}"></script>
+		<script>
+			new mlPushMenu( document.getElementById( 'mp-menu' ), document.getElementById( 'trigger' ) );
+		</script>
 	</body>
 </html>
