@@ -41,34 +41,9 @@ submenu2=Connect.submnu2("")
 								<ul class="dl-submenu">
 									<li py:for="submenus in submenu" py:if="menus[1] == submenus[2]">
                         					<a href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
-										<!--<ul class="dl-submenu">
-											<li><a href="#">Shirts</a></li>
-											<li><a href="#">Jackets</a></li>
-											<li><a href="#">Chinos &amp; Trousers</a></li>
-											<li><a href="#">Jeans</a></li>
-											<li><a href="#">T-Shirts</a></li>
-											<li><a href="#">Underwear</a></li>
-										</ul>-->
+
 									</li>
-									<!--<li>
-										<a href="#">Women</a>
-										<ul class="dl-submenu">
-											<li><a href="#">Jackets</a></li>
-											<li><a href="#">Knits</a></li>
-											<li><a href="#">Jeans</a></li>
-											<li><a href="#">Dresses</a></li>
-											<li><a href="#">Blouses</a></li>
-											<li><a href="#">T-Shirts</a></li>
-											<li><a href="#">Underwear</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">Children</a>
-										<ul class="dl-submenu">
-											<li><a href="#">Boys</a></li>
-											<li><a href="#">Girls</a></li>
-										</ul>
-									</li>-->
+
 								</ul>
 							</li>
 
@@ -79,7 +54,9 @@ submenu2=Connect.submnu2("")
 			</div>
 		</header>
 			<center>  <p style="text-align: justify; margin:5% 12% 2% 12%;color:red;">
-         							<span>${pagina[5]}</span>
+         							<span><img src="${tg.url('/img/sapiero-storia-piazza.JPG')}" width="25%" height="25%" alt="" style="float: left; margin: 15px 15px 15px 15px;"/>${pagina[5]}
+									<img src="${tg.url('/img/sapiero-storia-provinciale.JPG')}" width="25%" height="25%" alt="" style="float: right; margin: 15px 15px 15px 15px;"/>
+									</span>
 
             								</p>
 
