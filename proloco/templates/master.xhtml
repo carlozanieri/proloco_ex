@@ -24,23 +24,26 @@ submenu2=Connect.submnu2("")
 		<div class="container demo-5">
 			<!-- Codrops top bar -->
 
+<!--<img src="${tg.url('/img/logo.jpg')}" width="5%" height="5%" style="float: right;"/>-->
 			<header class="clearfix">
-
 
 			<div>
 				<div>
-
+				<img src="${tg.url('/img/header.png')}" width="60%" height="60%" style="margin-right: 10%; margin-left:10%"/>
 				</div>
 				<div>
 					<div id="dl-menu" class="dl-menuwrapper">
+
 						<button class="dl-trigger" >Open Menu</button>
 
 						<ul class="dl-menu">
+
 							<li py:for="menus in menu">
                 				<a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
 								<ul class="dl-submenu">
-									<li py:for="submenus in submenu" py:if="menus[1] == submenus[2]">
-                        					<a href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
+									<li py:for="submenus in submenu" >
+
+                        					<a py:if="menus[1] == submenus[2]" href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
 
 									</li>
 
