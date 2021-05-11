@@ -20,7 +20,9 @@ submenu=Connect.submnu("")
 submenu2=Connect.submnu2("")
 
 ?>
+
 	<body>
+	<py:include href = "slide.xhtml" />
 		<div class="container demo-5">
 			<!-- Codrops top bar -->
 
@@ -30,6 +32,9 @@ submenu2=Connect.submnu2("")
 			<div>
 				<div>
 				<img src="${tg.url('/img/header.png')}" width="60%" height="60%" style="margin-right: 10%; margin-left:10%"/>
+
+
+
 				</div>
 				<div>
 					<div id="dl-menu" class="dl-menuwrapper">
@@ -58,14 +63,14 @@ submenu2=Connect.submnu2("")
 		</header>
 
 
-			<center>  <p style="text-align: justify; margin:5% 12% 2% 12%;color:red;">
-         							${pagina[5]}<span><img src= "${tg.url('/img/')}${pagina[8]}" width="25%" height="25%" alt="" style="float: left; margin: 15px 15px 15px 15px;"/>
-									${pagina[10]}<img src="${tg.url('/img/')}${pagina[12]}" width="25%" height="25%" alt="" style="float: right; margin: 15px 15px 15px 15px;"/>
+			<center>  <span style="text-align: justify; margin:5% 10% 2% 10%;color:red;">
+         							<span><img src= "${tg.url('/img/')}${pagina[8]}" width="12%" height="12%" alt="" style="float: left; margin: 5px 5px 5px 5px;"/>${pagina[5]}
+									<img src="${tg.url('/img/')}${pagina[12]}" width="12%" height="12%" alt="" style="float: right; margin: 5px 5px 5px 5px;"/>${pagina[10]}
 									</span>
 
-            								</p>
+					</span></center>
 
-									</center>
+
 		</div><!-- /container -->
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
