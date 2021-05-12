@@ -39,6 +39,7 @@ proloco/public/css/layout.css
 proloco/public/css/main.css
 proloco/public/css/menu.css
 proloco/public/css/menu2.css
+proloco/public/css/menu6.css
 proloco/public/css/menu_1.css
 proloco/public/css/menu_113.css
 proloco/public/css/menu_114.css
@@ -50,6 +51,7 @@ proloco/public/css/responsiveslides.css
 proloco/public/css/s3-slider.css
 proloco/public/css/s3-slider.min.css
 proloco/public/css/slide.css
+proloco/public/css/stile.css
 proloco/public/css/style.css
 proloco/public/css/unusual menu.css
 proloco/public/css/unusual-menu.css
@@ -58,8 +60,15 @@ proloco/public/fonts/glyphicons-halflings-regular.eot
 proloco/public/fonts/glyphicons-halflings-regular.svg
 proloco/public/fonts/glyphicons-halflings-regular.ttf
 proloco/public/fonts/glyphicons-halflings-regular.woff
+proloco/public/img/header.png
+proloco/public/img/leaf.jpg
+proloco/public/img/logo.jpg
+proloco/public/img/road.jpg
 proloco/public/img/sapiero-storia-piazza.JPG
 proloco/public/img/sapiero-storia-provinciale.JPG
+proloco/public/img/sea.jpg
+proloco/public/img/shelter.jpg
+proloco/public/img/tree.jpg
 proloco/public/img/turbogears_logo.png
 proloco/public/img/turbogears_logo_big.png
 proloco/public/img/under_the_hood_blue.png
@@ -73,6 +82,7 @@ proloco/public/javascript/main.js
 proloco/public/javascript/menu.js
 proloco/public/javascript/menu2.js
 proloco/public/javascript/menu3.js
+proloco/public/javascript/menu6.js
 proloco/public/javascript/menu_111.js
 proloco/public/javascript/menu_114.js
 proloco/public/javascript/menujs.js
@@ -89,61 +99,23 @@ proloco/public/menu/jquery-3.1.1.min.js
 proloco/public/menu/unusual menu.css
 proloco/public/menu/unusual menu.js
 proloco/public/menu/unusual menu.xhtml
-proloco/public/menu_2/demo-drop-down-menu.jpg
-proloco/public/menu_2/index.htm
-proloco/public/menu_2/css/font-awesome.css
-proloco/public/menu_2/css/menu.css
-proloco/public/menu_2/font/FontAwesome.otf
-proloco/public/menu_2/font/fontawesome-webfont.eot
-proloco/public/menu_2/font/fontawesome-webfont.svg
-proloco/public/menu_2/font/fontawesome-webfont.ttf
-proloco/public/menu_2/font/fontawesome-webfont.woff
-proloco/public/menu_2/images/arrow.png
-proloco/public/menu_2/images/logo.png
-proloco/public/menu_2/images/plus-gray.png
-proloco/public/menu_2/js/function.js
-proloco/public/menu_2/js/jquery.js
-proloco/public/menu_3/README.md
-proloco/public/menu_3/index.html
-proloco/public/menu_3/index2.html
-proloco/public/menu_3/index3.xhtml
-proloco/public/menu_3/css/component.css
-proloco/public/menu_3/css/demo-save.css
-proloco/public/menu_3/css/demo.css
-proloco/public/menu_3/css/icons.css
-proloco/public/menu_3/css/normalize.css
-proloco/public/menu_3/fonts/codropsicons/codropsicons.eot
-proloco/public/menu_3/fonts/codropsicons/codropsicons.svg
-proloco/public/menu_3/fonts/codropsicons/codropsicons.ttf
-proloco/public/menu_3/fonts/codropsicons/codropsicons.woff
-proloco/public/menu_3/fonts/codropsicons/license.txt
-proloco/public/menu_3/fonts/linecons/Read Me.txt
-proloco/public/menu_3/fonts/linecons/license.txt
-proloco/public/menu_3/fonts/linecons/linecons.dev.svg
-proloco/public/menu_3/fonts/linecons/linecons.eot
-proloco/public/menu_3/fonts/linecons/linecons.svg
-proloco/public/menu_3/fonts/linecons/linecons.ttf
-proloco/public/menu_3/fonts/linecons/linecons.woff
-proloco/public/menu_3/fonts/linecons/lte-ie7.js
-proloco/public/menu_3/js/classie.js
-proloco/public/menu_3/js/mlpushmenu.js
-proloco/public/menu_3/js/modernizr.custom.js
-proloco/public/menu_4/.gitignore
-proloco/public/menu_4/README.md
-proloco/public/menu_4/index.html
-proloco/public/menu_4/package-lock.json
-proloco/public/menu_4/package.json
-proloco/public/menu_4/postcss.config.js
-proloco/public/menu_4/webpack.dev.js
-proloco/public/menu_4/webpack.prod.js
-proloco/public/menu_4/dist/main.css
-proloco/public/menu_4/dist/main.js
-proloco/public/menu_4/src/index.js
-proloco/public/menu_4/src/style.css
-proloco/public/menu_5/README.md
-proloco/public/menu_5/index.html
-proloco/public/menu_5/script.js
-proloco/public/menu_5/style.css
+proloco/public/menu_6/README.md
+proloco/public/menu_6/index.html
+proloco/public/menu_6/index2.html
+proloco/public/menu_6/index3.html
+proloco/public/menu_6/index4.html
+proloco/public/menu_6/index5.html
+proloco/public/menu_6/css/component.css
+proloco/public/menu_6/css/default.css
+proloco/public/menu_6/fonts/icomoon.dev.svg
+proloco/public/menu_6/fonts/icomoon.eot
+proloco/public/menu_6/fonts/icomoon.svg
+proloco/public/menu_6/fonts/icomoon.ttf
+proloco/public/menu_6/fonts/icomoon.woff
+proloco/public/menu_6/fonts/license.txt
+proloco/public/menu_6/images/clickhere.png
+proloco/public/menu_6/js/jquery.dlmenu.js
+proloco/public/menu_6/js/modernizr.custom.js
 proloco/public/static/favicon.ico
 proloco/public/static/jquery-3.1.1.min.js
 proloco/public/static/menu_111.css
@@ -355,6 +327,7 @@ proloco/templates/error.xhtml
 proloco/templates/home.xhtml
 proloco/templates/home_orig.xhtml
 proloco/templates/index.xhtml
+proloco/templates/index6_1.xhtml
 proloco/templates/index_1.html
 proloco/templates/index_2.xhtml
 proloco/templates/index_m.xhtml
@@ -365,6 +338,7 @@ proloco/templates/master-old.xhtml
 proloco/templates/master-slide.xhtml
 proloco/templates/master.xhtml
 proloco/templates/master_ok1.xhtml
+proloco/templates/master_ok_3.xhtml
 proloco/templates/master_save1.xhtml
 proloco/templates/master_save2.xhtml
 proloco/templates/menu.html
@@ -379,94 +353,23 @@ proloco/templates/menu_12.html
 proloco/templates/menu_2.xhtml
 proloco/templates/menu_4.xhtml
 proloco/templates/menu_5.xhtml
+proloco/templates/menu_5.xhtml~
 proloco/templates/menu_css.xhtml
+proloco/templates/menu_da_provare.xhtml
 proloco/templates/menu_primo.html
 proloco/templates/menu_save2.html
 proloco/templates/mugello.xhtml
 proloco/templates/prolocosanpiero.xhtml
 proloco/templates/responsive.html
 proloco/templates/slide.xhtml
-proloco/templates/slidem.html
+proloco/templates/slidem.xhtml
 proloco/templates/slider.html
 proloco/templates/template.xhtml.template
-proloco/templates/GMenu/README.md
-proloco/templates/GMenu/index.xhtml
-proloco/templates/GMenu/css/component.css
-proloco/templates/GMenu/css/demo.css
-proloco/templates/GMenu/css/normalize.css
-proloco/templates/GMenu/fonts/codropsicons/codropsicons.eot
-proloco/templates/GMenu/fonts/codropsicons/codropsicons.svg
-proloco/templates/GMenu/fonts/codropsicons/codropsicons.ttf
-proloco/templates/GMenu/fonts/codropsicons/codropsicons.woff
-proloco/templates/GMenu/fonts/codropsicons/license.txt
-proloco/templates/GMenu/fonts/ecoicons/Read Me.txt
-proloco/templates/GMenu/fonts/ecoicons/ecoicons.dev.svg
-proloco/templates/GMenu/fonts/ecoicons/ecoicons.eot
-proloco/templates/GMenu/fonts/ecoicons/ecoicons.svg
-proloco/templates/GMenu/fonts/ecoicons/ecoicons.ttf
-proloco/templates/GMenu/fonts/ecoicons/ecoicons.woff
-proloco/templates/GMenu/fonts/ecoicons/license.txt
-proloco/templates/GMenu/js/classie.js
-proloco/templates/GMenu/js/gnmenu.js
-proloco/templates/GMenu/js/modernizr.custom.js
-proloco/templates/Proloco San Piero a Sieve_files/-lZO2ZzTWM4.html
-proloco/templates/Proloco San Piero a Sieve_files/Sponsor%20SPS%202020.jpg
-proloco/templates/Proloco San Piero a Sieve_files/bootstrap.css
-proloco/templates/Proloco San Piero a Sieve_files/core.js
-proloco/templates/Proloco San Piero a Sieve_files/engine.js
-proloco/templates/Proloco San Piero a Sieve_files/engine_002.js
-proloco/templates/Proloco San Piero a Sieve_files/ga.js
-proloco/templates/Proloco San Piero a Sieve_files/general.css
-proloco/templates/Proloco San Piero a Sieve_files/ic_rounded_component.css
-proloco/templates/Proloco San Piero a Sieve_files/icagenda-front.css
-proloco/templates/Proloco San Piero a Sieve_files/icagenda.css
-proloco/templates/Proloco San Piero a Sieve_files/jquery-1.js
-proloco/templates/Proloco San Piero a Sieve_files/jquery.js
-proloco/templates/Proloco San Piero a Sieve_files/jquery_002.js
-proloco/templates/Proloco San Piero a Sieve_files/jquery_003.js
-proloco/templates/Proloco San Piero a Sieve_files/jquery_004.js
-proloco/templates/Proloco San Piero a Sieve_files/likebox.html
-proloco/templates/Proloco San Piero a Sieve_files/mootools-core.js
-proloco/templates/Proloco San Piero a Sieve_files/mootools-more.js
-proloco/templates/Proloco San Piero a Sieve_files/proloco-sanpieroasieve-estemporanea-garagk-is-92.jpg
-proloco/templates/Proloco San Piero a Sieve_files/proloco-sanpieroasieve-ingorgosonoro-2015gk-is-92.jpg
-proloco/templates/Proloco San Piero a Sieve_files/proloco-sanpieroasieve-mercanzie-in-piazzagk-is-92.jpg
-proloco/templates/Proloco San Piero a Sieve_files/script.js
-proloco/templates/Proloco San Piero a Sieve_files/slideshow.jpg
-proloco/templates/Proloco San Piero a Sieve_files/slideshow_002.jpg
-proloco/templates/Proloco San Piero a Sieve_files/style.css
-proloco/templates/Proloco San Piero a Sieve_files/style_002.css
-proloco/templates/Proloco San Piero a Sieve_files/style_003.css
-proloco/templates/Proloco San Piero a Sieve_files/style_004.css
-proloco/templates/Proloco San Piero a Sieve_files/system.css
-proloco/templates/Proloco San Piero a Sieve_files/template.css
-proloco/templates/Proloco San Piero a Sieve_files/tipTip.css
-proloco/templates/Proloco San Piero a Sieve_files/-lZO2ZzTWM4_data/7gT085406CQDu4xrXo1n5k7zMdGmvygtDZ7XX6RKxJc.js
-proloco/templates/Proloco San Piero a Sieve_files/-lZO2ZzTWM4_data/ad_status.js
-proloco/templates/Proloco San Piero a Sieve_files/-lZO2ZzTWM4_data/base.js
-proloco/templates/Proloco San Piero a Sieve_files/-lZO2ZzTWM4_data/embed.js
-proloco/templates/Proloco San Piero a Sieve_files/-lZO2ZzTWM4_data/fetch-polyfill.js
-proloco/templates/Proloco San Piero a Sieve_files/-lZO2ZzTWM4_data/remote.js
-proloco/templates/Proloco San Piero a Sieve_files/-lZO2ZzTWM4_data/www-embed-player.js
-proloco/templates/Proloco San Piero a Sieve_files/-lZO2ZzTWM4_data/www-player-webp.css
-proloco/templates/Proloco San Piero a Sieve_files/likebox_data/17361763_1674470575913351_1282285436842703042_n.jpg
-proloco/templates/Proloco San Piero a Sieve_files/likebox_data/548924_635616903132062_136334404_n.jpg
-proloco/templates/Proloco San Piero a Sieve_files/likebox_data/A1MJ22n9DQK.js
-proloco/templates/Proloco San Piero a Sieve_files/likebox_data/B7grYoB_WnU.js
-proloco/templates/Proloco San Piero a Sieve_files/likebox_data/T3Cb6dInm5s.js
-proloco/templates/Proloco San Piero a Sieve_files/likebox_data/hV58uaXQUyt.js
-proloco/templates/Proloco San Piero a Sieve_files/likebox_data/vLodcEeahHy.css
-proloco/templates/Proloco San Piero a Sieve_files/likebox_data/xXhDX2DQ6Js.js
 proloco/templates/__pycache__/__init__.cpython-38.pyc
 proloco/templates/__pycache__/__init__.cpython-39.pyc
 proloco/templates/css/component.css
 proloco/templates/css/default.css
 proloco/templates/css/menu3.css
-proloco/templates/demo/demo.css
-proloco/templates/demo/demo.html
-proloco/templates/demo/themes/themes.css
-proloco/templates/demo/themes/themes.gif
-proloco/templates/demo/themes/themes.html
 proloco/templates/fonts/icomoon.dev.svg
 proloco/templates/fonts/icomoon.eot
 proloco/templates/fonts/icomoon.svg
