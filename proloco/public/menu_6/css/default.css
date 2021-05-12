@@ -1,6 +1,16 @@
 /* General Demo Style */
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+.zoom {
 
+  background-color:white;
+  transition: transform .2s; /* Animation */
+
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(2.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
 @font-face {
 	font-family: 'fontawesome';
 	src:url('../fonts/fontawesome.eot');
