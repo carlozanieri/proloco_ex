@@ -22,7 +22,11 @@ submenu2=Connect.submnu2("")
 ?>
 
 	<body>
-	<py:include href = "slide.xhtml" />
+<div>
+					<p style=" display: inline; vertical-align: baseline; color:#7e342d; font-weight: bold; font-size: 96px; margin-left: 120px;"> <img src="${tg.url('/img/logo.jpg')}" width="5%" height="5%" style="float: left;"/>Pro Loco <h1   style=" vertical-align: text-baseline; display: inline; color:#7e342d; font-size: 48px;" >S.Piero a Sieve</h1><img src="${tg.url('/img/logo.jpg')}" width="5%" height="5%" style="float: right;"/> </p>
+				<!--<img src="${tg.url('/img/header.png')}" width="60%" height="60%" style="margin-right: 10%; margin-left:10%"/> -->
+
+				</div>
 		<div class="container demo-5">
 			<!-- Codrops top bar -->
 
@@ -30,12 +34,7 @@ submenu2=Connect.submnu2("")
 			<header class="clearfix">
 
 			<div>
-				<div>
-				<img src="${tg.url('/img/header.png')}" width="60%" height="60%" style="margin-right: 10%; margin-left:10%"/>
 
-
-
-				</div>
 				<div>
 					<div id="dl-menu" class="dl-menuwrapper">
 
@@ -63,15 +62,14 @@ submenu2=Connect.submnu2("")
 		</header>
 
 
-			<center>  <span style="text-align: justify; margin:5% 10% 2% 10%;color:red;">
-         							<span><img src= "${tg.url('/img/')}${pagina[8]}" width="12%" height="12%" alt="" style="float: left; margin: 5px 5px 5px 5px;"/>${pagina[5]}
-									<img src="${tg.url('/img/')}${pagina[12]}" width="12%" height="12%" alt="" style="float: right; margin: 5px 5px 5px 5px;"/>${pagina[10]}
-									</span>
+			  <span style="text-align: justify; margin: 15px 15px 15px 15px; color:#7e342d;">
 
-					</span></center>
-
-
-		</div><!-- /container -->
+					<p style="text-align: justify; margin: 5%; color:#7e342d;">
+				  		<img src= "${tg.url('/img/')}${pagina[8]}" width="12%" height="12%" alt="" style="float: left; margin: 15px 15px 15px 15px;"/>${pagina[5]}
+					  <img src="${tg.url('/img/')}${pagina[12]}" width="12%" height="12%" alt="" style="float: right; margin: 15px 15px 15px 15px;"/>${pagina[10]}
+					</p>
+					</span>
+		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="${tg.url('/menu_6/js/jquery.dlmenu.js')}"></script>
@@ -82,6 +80,7 @@ submenu2=Connect.submnu2("")
 				});
 			});
 		</script>
+	<!--<py:include href="slide.xhtml"/>-->
 	</body>
 
 </html>
