@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Pro Loco San Piero</title>
+		<meta name="description" content="Responsive Multi-Level Menu: Space-saving drop-down menu with subtle effects" />
+		<meta name="keywords" content="multi-level menu, mobile menu, responsive, space-saving, drop-down menu, css, jquery" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="${tg.url('/slick-slider/style.css')}"/>
+    <link rel="stylesheet" href="${tg.url('/slick-slider/css/slick.css')}"/>
+
+   
+</head>
+
+
+<div class="container-slider">
+	
+	<div class="slider slider-for">
+		<div><img src="${tg.url('/slick-slider/3.jpg')}" alt="Berlin Wall"/><h3>Berlin Wall</h3></div>
+		<div><img src="${tg.url('/slick-slider/1.jpg')}" alt="Brandenburg Port"/><h3>Brandenburg Port</h3></div>
+		<div><img src="${tg.url('/slick-slider/2.jpg')}" alt="Blue Street Art"/><h3>Blue Street Art</h3></div>
+		
+		<div><img src="${tg.url('/slick-slider/4.jpg')}" alt="Ramones Museum"/><h3>Ramones Museum</h3></div>
+		<div><img src="${tg.url('/slick-slider/5.jpg')}" alt="Kreuzberg"/><h3>Kreuzberg</h3></div>
+	</div>
+	
+	<div class="slider slider-nav">
+		<div><img src="${tg.url('/slick-slider/3.jpg')}" alt="Berlin Wall')}"/><h4>Berlin Wall</h4></div>
+		<div><img src="${tg.url('/slick-slider/1.jpg')}" alt="Brandenburg Port"/><h4>Brandenburg Port</h4></div>
+		<div><img src="${tg.url('/slick-slider/2.jpg')}" alt="Blue Street Art"/><h4>Blue Street Art</h4></div>
+		
+		<div><img src="${tg.url('/slick-slider/4.jpg')}" alt="Ramones Museum"/><h4>Ramones Museum</h4></div>
+		<div><img src="${tg.url('/slick-slider/5.jpg')}" alt="Kreuzberg"/><h4>Kreuzberg</h4></div>
+	</div>
+
+</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"/>
+<script src="${tg.url('/slick-slider/js/slick.min.js')}"/>
+
+<script>
+$(document).ready(function(){
+    
+	$('.slider-for').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.slider-nav'
+	});
+	
+	$('.slider-nav').slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		asNavFor: '.slider-for',
+		dots: true,
+		centerMode: false,
+		focusOnSelect: true,
+		autoplay: true,
+		autoplaySpeed: 2000,
+		responsive: [
+		    {
+		      breakpoint: 1024,
+		      settings: {
+		        slidesToShow: 3,
+		        slidesToScroll: 3,
+		        infinite: true,
+		        dots: true
+		      }
+		    },
+		    {
+		      breakpoint: 600,
+		      settings: {
+		        slidesToShow: 2,
+		        slidesToScroll: 2
+		      }
+		    }
+		]
+	}); 
+	 
+});
+</script>
+
+</html>
