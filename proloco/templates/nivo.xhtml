@@ -56,16 +56,14 @@ submenu2=Connect.submnu2("")
 	    <div   id="slider" class="nivoSlider">
 
 			<img py:for="sliders in slider" src= "${tg.url('/img/')}${sliders[1]}/${sliders[2]}" alt="" title="#htmlcaption${sliders[0]}" />
-	        <!--<img src="${tg.url('/nivo-slider/img/london-bridge.jpg')}" alt="" title="#htmlcaption1"  />
-	        <img src="${tg.url('/nivo-slider/img/skyline.jpg')}" alt="" title="#htmlcaption2" />
-	        <img src="${tg.url('/nivo-slider/img/canada-water.jpg')}" alt="" title="#htmlcaption3"  /> -->
+
 	    </div>
 
 	</div>
 
     <div py:for="sliders in slider" id="htmlcaption${sliders[0]}" class="nivo-html-caption">
 	   	<h1 >${sliders[3]}</h1>
-	    <p> ${sliders[4]} <a href="">${pagina}Continua... </a></p>
+	    <p> ${sliders[4]} <a href="${sliders[5]}">${pagina}${sliders[3]}... </a></p>
 	</div>
 
 	</div>
