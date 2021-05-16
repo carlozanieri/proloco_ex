@@ -49,27 +49,33 @@ submenu2=Connect.submnu2("")
 
 </head>
 
-    <div   id="wrapper">
+    <div id="wrapper">
         
 
 	<div class="slider-wrapper">
-	    <div   id="slider" class="nivoSlider">
-
-			<img py:for="sliders in slider" src= "${tg.url('/img/')}${sliders[1]}/${sliders[2]}" alt="" title="#htmlcaption${sliders[0]}" />
-	        <!--<img src="${tg.url('/nivo-slider/img/london-bridge.jpg')}" alt="" title="#htmlcaption1"  />
+	    <div id="slider" class="nivoSlider">
+	        <img src="${tg.url('/nivo-slider/img/london-bridge.jpg')}" alt="" title="#htmlcaption1"  />
 	        <img src="${tg.url('/nivo-slider/img/skyline.jpg')}" alt="" title="#htmlcaption2" />
-	        <img src="${tg.url('/nivo-slider/img/canada-water.jpg')}" alt="" title="#htmlcaption3"  /> -->
+	        <img src="${tg.url('/nivo-slider/img/canada-water.jpg')}" alt="" title="#htmlcaption3"  />
 	    </div>
-
 	</div>
-
-    <div py:for="sliders in slider" id="htmlcaption${sliders[0]}" class="nivo-html-caption">
-	   	<h1 >${sliders[3]}</h1>
-	    <p> ${sliders[4]} <a href="">Continua...</a></p>
+    
+    <div id="htmlcaption1" class="nivo-html-caption">
+	   	<h1>London Bridge</h1>
+	    <p>London Bridge è un ponte sul Tamigi a Londra, che collega la City of London al borgo londinese di Southwark. <a href="">Continua...</a></p>
 	</div>
-
+	
+	<div id="htmlcaption2" class="nivo-html-caption">
+		<h1>Skiline from DLR</h1>
+	    <p>La Docklands Light Railway (DLR) è una metropolitana leggera che serve l'area ricostruita della zona del Docklands. <a href="">Continua...</a></p>.
 	</div>
-
-
+	
+	<div id="htmlcaption3" class="nivo-html-caption">
+		<h1>Canada Water</h1>
+	    <p>Canada Water è una stazione della metropolitana di Londra, situata a Rotherhithe, nella parte meridionale di Londra. <a href="">Continua...</a></p>
+	</div>
+	
+	
+	</div>
 
 </html>
