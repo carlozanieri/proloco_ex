@@ -185,13 +185,13 @@ class Connect:
         body = cursor.fetchone()
         #menu = primanota[1]["descrizione"]
         return body
-    def slider(self, pagina):
+    def slider(self, luogo):
 
         db = MySQLdb.connect(options.mysql_host, options.mysql_user, options.mysql_password, options.mysql_database)
         ##print(menu)
         cursor = db.cursor()
-        cursor.execute("SELECT *  from slider")
-
+        cursor.execute("SELECT *  from slider where codice = '" + luogo + "'")
+        ##cursor.execute("SELECT *  from slider")
         slider = cursor.fetchall()
         #menu = primanota[1]["descrizione"]
         return slider

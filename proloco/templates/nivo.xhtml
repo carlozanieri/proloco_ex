@@ -2,13 +2,7 @@
 <html lang="en" class="no-js">
 <head>
 
-	<?python
-from proloco.Connect import Connect
-slider=Connect.slider("", "")
-submenu=Connect.submnu("")
-submenu2=Connect.submnu2("")
 
-?>
     <title></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
@@ -48,22 +42,27 @@ submenu2=Connect.submnu2("")
 	</script>
 
 </head>
-
+	<?python
+from proloco.Connect import Connect
+submenu=Connect.submnu("")
+submenu2=Connect.submnu2("")
+slider=Connect.slider("", luogo)
+?>
     <div   id="wrapper">
         
 
 	<div class="slider-wrapper">
 	    <div   id="slider" class="nivoSlider">
-
-			<img py:for="sliders in slider" src= "${tg.url('/img/')}${sliders[1]}/${sliders[2]}" alt="" title="#htmlcaption${sliders[0]}" />
-
+			<span py:for="sliders in slider">
+			<img src= "${tg.url('/img/')}${sliders[1]}/${sliders[2]}" alt="" title="#htmlcaption${sliders[0]}" />
+			</span>
 	    </div>
 
 	</div>
 
     <div py:for="sliders in slider" id="htmlcaption${sliders[0]}" class="nivo-html-caption">
-	   	<h1 >${sliders[3]}</h1>
-	    <p> ${sliders[4]} <a href="${sliders[5]}">${pagina}${sliders[3]}... </a></p>
+	   	<h1>${sliders[3]}</h1>
+	    <p> ${sliders[4]} <a href="${sliders[5]}">${sliders[3]}...</a></p>
 	</div>
 
 	</div>
