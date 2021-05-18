@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="${tg.url('/nivo-slider/css/nivo-slider.css')}" type="text/css" media="screen" />
     <link href='http://fonts.googleapis.com/css?family=Dosis:400,600,300' rel='stylesheet' type='text/css'/>
-
+    
     <script type="text/javascript" src="${tg.url('/nivo-slider/js/jquery-1.7.1.min.js')}"></script>
     <script type="text/javascript" src="${tg.url('/nivo-slider/js/jquery.nivo.slider.js')}"></script>
     <script type="text/javascript">
@@ -19,8 +19,8 @@
 		.fadeIn("fast")
 		.animate({left: "0px"},1400)
 	;};
-
-
+	
+	
 	function captionMoveOut() {
 		$('.nivo-caption')
 		.animate({left: "-400px"},1400)
@@ -36,7 +36,7 @@
 			animSpeed:850,
 			afterLoad: function (){captionMoveIn();},
 	        beforeChange: function (){captionMoveOut();captionMoveIn();}
-
+	      
 	    });
 	});
 	</script>
@@ -49,7 +49,7 @@ submenu2=Connect.submnu2("")
 slider=Connect.slider("", luogo)
 ?>
     <div   id="wrapper">
-
+        
 
 	<div class="slider-wrapper">
 	    <div   id="slider" class="nivoSlider">
