@@ -29,14 +29,14 @@ submenu2=Connect.submnu2("")
 
 <body>
 
-<div>
+<header>
 
 	<img src="${tg.url('/img/logo.jpg')}" width="5%" height="5%" style="float: left;"/><p style=" display: inline; vertical-align: baseline; color:#7e342d; font-weight: bold; font-size: 96px; align: center; margin-left:25%"> Pro Loco <h1   style=" vertical-align: text-baseline; display: inline; color:#7e342d; font-size: 48px; text-align: center;" >S.Piero a Sieve</h1><img src="${tg.url('/img/logo.jpg')}" width="5%" height="5%" style="float: right;"/> </p>
 
-
+</header>
 	<!--<img src="${tg.url('/img/header.png')}" width="60%" height="60%" style="margin-right: 10%; margin-left:10%"/> -->
 
-				</div>
+
 <!--<div align="center"><iframe width="800" height="800" src="/slide" frameborder="no" scrolling="no"></iframe></div>-->
 		<div class="container demo-5">
 			<!-- Codrops top bar -->
@@ -72,13 +72,13 @@ submenu2=Connect.submnu2("")
 				</div>
 			</div>
 
-		<!--</header>
-<py:include href = "nivo.xhtml" />-->
+
+<!--<py:include href = "nivo.xhtml" />-->
 
 
-					<p style="text-align: justify;  color:#7e342d; margin-right:15%;margin-left:15%;">
+					<p style="text-align: justify;  color:#7e342d; margin-right:20%;margin-left:20%;">
 
-				  		<img class="zoom" src= "${tg.url('/img/')}${pagina[8]}" width="12%" height="12%" alt="" style="float: left; margin: 15px 15px 15px 15px;"/>${pagina[5]}
+				  		<img py:if="pagina[2] != 'index'" class="zoom" src= "${tg.url('/img/')}${pagina[8]}" width="12%" height="12%" alt="" style="float: left; margin: 15px 15px 15px 15px;"/>${pagina[5]}
 
 					  <img class="zoom" src="${tg.url('/img/')}${pagina[12]}" width="12%" height="12%" alt="" style="float: right; margin: 15px 15px 15px 15px;"/>${pagina[10]}
 					</p>
