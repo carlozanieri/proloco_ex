@@ -37,6 +37,7 @@ body, html { font-size: 100%; 	padding: 0; margin: 0;}
 body {
 	font-family: 'Lato', Calibri, Arial, sans-serif;
 	color: #b1aea6;
+	background-image: url("../img/background.jpg");
 	background: #fffcf5;
 	min-height: 800px;
 }
