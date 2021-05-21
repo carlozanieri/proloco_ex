@@ -106,7 +106,7 @@ a:hover {
 }
 
 .container > header {
-	padding: 2.875em 1.875em 2.875em;
+/*	padding: 2.875em 1.875em 2.875em;*/
 	text-align: center;
 	background: rgba(0,0,0,0.01);
 }
@@ -123,7 +123,7 @@ a:hover {
 	display: block;
 	font-size: 60%;
 	color: #ceccc6;
-	padding: 0 0 0.6em 0.1em;
+/*	padding: 0 0 0.6em 0.1em;*/
 }
 
 /* Header Style */
