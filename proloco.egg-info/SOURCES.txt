@@ -68,6 +68,7 @@ proloco/public/fonts/glyphicons-halflings-regular.eot
 proloco/public/fonts/glyphicons-halflings-regular.svg
 proloco/public/fonts/glyphicons-halflings-regular.ttf
 proloco/public/fonts/glyphicons-halflings-regular.woff
+proloco/public/img/background.jpg
 proloco/public/img/header.png
 proloco/public/img/leaf.jpg
 proloco/public/img/logo.jpg
