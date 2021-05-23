@@ -43,7 +43,7 @@ class RootController(BaseController):
     @expose('proloco.templates.master')
     def index(self):
         """Handle the front-page."""
-        return dict(page='master', pagina=Connect.body("", "index"))
+        return dict(page='master', pagina=Connect.body("", "index"), luogo="index")
     @expose('proloco.templates.about')
     def about(self):
         """Handle the 'about' page."""
@@ -131,10 +131,10 @@ class RootController(BaseController):
         """Handle the front-page."""
         return dict(page='master', pagina=Connect.body("", "mugello"), luogo="mugello")
 
-    @expose('proloco.templates.master-old')
+    @expose('proloco.templates.master')
     def sanpiero(self):
         """Handle the front-page."""
-        return dict(page='master-old', pagina=Connect.body("", "sanpiero"))
+        return dict(page='master', pagina=Connect.body("", "sanpiero"), luogo="sanpiero")
 
     @expose('proloco.templates.master')
     def chisiamo(self):
