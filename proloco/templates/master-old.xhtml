@@ -1,47 +1,157 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/">
 
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta charset="${response.charset}" />
 
-  <title py:block="master_title">ProLoco San Piero a Sieve</title>
-  <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/bootstrap.min.css')}" />
-  <link rel="stylesheet" type="text/css" media="screen" href="${tg.url('/css/style.css')}" />
-  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org" />
-    <meta name="description" content="Camera a free jQuery slideshow with many effects, transitions, adaptive layout, easy to customize, using canvas and mobile ready"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <link href="${tg.url('/static/css/unusual menu.css')}" rel="stylesheet" />
-    <script src="${tg.url('/static/js/jquery-3.1.1.min.js')}"></script>
-    <script src="${tg.url('/static/js/unusual menu.js')}"></script>
-    <py:block name="head"></py:block>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
+		<title>Pro Loco San Piero</title>
+		<meta name="description" content="Responsive Multi-Level Menu: Space-saving drop-down menu with subtle effects" />
+		<meta name="keywords" content="multi-level menu, mobile menu, responsive, space-saving, drop-down menu, css, jquery" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_6/css/default.css')}" />
+		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_6/css/component.css')}" />
+		<script src="${tg.url('/menu_6/js/modernizr.custom.js')}"></script>
+		 <link rel="stylesheet" href="${tg.url('/nivo-slider/css/nivo-slider.css')}" type="text/css" media="screen" />
+    <link href='http://fonts.googleapis.com/css?family=Dosis:400,600,300' rel='stylesheet' type='text/css'/>
 
-    <py:block name="head"></py:block>
+    <script type="text/javascript" src="${tg.url('/nivo-slider/js/jquery-1.7.1.min.js')}"></script>
+    <script type="text/javascript" src="${tg.url('/nivo-slider/js/jquery.nivo.slider.js')}"></script>
+    <script type="text/javascript">
 
-</head>
+	function captionMoveIn() {
+		$('.nivo-caption')
+		.fadeIn("fast")
+		.animate({left: "0px"},1400)
+	;};
+
+
+	function captionMoveOut() {
+		$('.nivo-caption')
+		.animate({left: "-400px"},1400)
+		.fadeOut("fast")
+	;};
+
+	</script>
+    <script type="text/javascript">
+	$(window).load(function() {
+		$('#slider').nivoSlider({
+	        effect:"sliceUpDownLeft",
+	        pauseTime:6000,
+			animSpeed:850,
+			afterLoad: function (){captionMoveIn();},
+	        beforeChange: function (){captionMoveOut();captionMoveIn();}
+
+	    });
+	});
+	</script>
+	</head>
 <?python
 from proloco.Connect import Connect
-menu=Connect.menu("")
 submenu=Connect.submnu("")
-
+submenu2=Connect.submnu2("")
+slider=Connect.slider("", luogo)
 ?>
-<body>
-    <nav>
-        <ul>
 
-            <li py:for="menus in menu">
-                <a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
-                <ul class="hidden">
-                    <li py:for="submenus in submenu" py:if="menus[1] == submenus[2]">
-                        <a href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
-                    </li>
-                </ul>
-            </li>
 
-        </ul>
-    </nav>
+<!--<img src="${tg.url('/img/logo.jpg')}" width="5%" height="5%" style="float: left; margin-left:5%; display:block;"/>
+	<span style=" display: inline; vertical-align: baseline; color:#7e342d; font-weight: bold; font-size: 500%; "> Pro Loco </span><span   style=" vertical-align: text-baseline; display: inline; color:#7e342d; font-size: 200%; text-align: center;" >S.Piero a Sieve</span><img src="${tg.url('/img/logo.jpg')}" width="5%" height="5%" style="float: right; margin-right:5%"/>
+-->
 
-  </body>
+
+
+<header class="container demo-5">
+<img src="${tg.url('/img/header.png')}" width="50%" height="50%"  style=" margin-left:20%; margin-right:20%;"/>
+<div id="dl-menu" class="dl-menuwrapper">
+
+<button class="dl-trigger" style=" float:left;">Open Menu</button>
+
+						<ul class="dl-menu">
+
+							<li py:for="menus in menu">
+                				<a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
+								<ul class="dl-submenu">
+									<li py:for="submenus in submenu" >
+
+                        					<a py:if="menus[1] == submenus[2]" href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
+
+									</li>
+
+								</ul>
+							</li>
+
+
+						</ul>
+
+					</div>
+</header>
+
+<body style="background-image: url(${tg.url('/img/background.jpg')});">
+<!--<div align="center"><iframe width="800" height="800" src="/slide" frameborder="no" scrolling="no"></iframe></div>-->
+		<div class="container demo-5">
+			<!-- Codrops top bar -->
+
+<!--<img src="${tg.url('/img/logo.jpg')}" width="5%" height="5%" style="float: right;"/>
+			<header class="clearfix">-->
+
+			<div>
+
+				<div   id="wrapper">
+
+
+	<div class="slider-wrapper">
+	    <div   id="slider" class="nivoSlider">
+			<span py:for="sliders in slider">
+			<img class="zoom" src= "${tg.url('/img/')}${sliders[1]}/${sliders[2]}" alt="" title="#htmlcaption${sliders[0]}" />
+			</span>
+	    </div>
+
+	</div>
+
+    <div py:for="sliders in slider" id="htmlcaption${sliders[0]}" class="nivo-html-caption">
+		<h1><a style="color:#000000;" href="${sliders[5]}">${sliders[3]}</a></h1>
+	    <p> ${sliders[4]} <a href="">Continua...</a></p>
+	</div>
+
+	</div>
+<iframe style="float:right;" width="15%" height="15%" src="https://www.youtube.com/embed/-lZO2ZzTWM4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
+
+			</div>
+
+
+<!--<py:include href = "nivo.xhtml" />-->
+
+
+					<p style="text-align: justify;  color:#7e342d; margin-right:15%;margin-left:15%;">
+
+				  		<img py:if="pagina[2] != 'index'" class="zoom" src= "${tg.url('/img/')}${pagina[8]}" width="12%" height="12%" alt="" style="float: left; margin: 15px 15px 15px 15px;"/>${pagina[5]}
+
+					  <img class="zoom" src="${tg.url('/img/')}${pagina[12]}" width="12%" height="12%" alt="" style="float: right; margin: 15px 15px 15px 15px;"/>${pagina[10]}
+
+					</p>
+
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="${tg.url('/menu_6/js/jquery.dlmenu.js')}"></script>
+		<script>
+			$(function() {
+				$( '#dl-menu' ).dlmenu({
+					animationClasses : { classin : 'dl-animate-in-4', classout : 'dl-animate-out-4' }
+				});
+			});
+		</script>
+
+
+
+
+</body>
+
+
+
 </html>

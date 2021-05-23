@@ -131,10 +131,10 @@ class RootController(BaseController):
         """Handle the front-page."""
         return dict(page='master', pagina=Connect.body("", "mugello"), luogo="mugello")
 
-    @expose('proloco.templates.master')
+    @expose('proloco.templates.master-old')
     def sanpiero(self):
         """Handle the front-page."""
-        return dict(page='master', pagina=Connect.body("", "sanpiero"))
+        return dict(page='master-old', pagina=Connect.body("", "sanpiero"))
 
     @expose('proloco.templates.master')
     def chisiamo(self):
