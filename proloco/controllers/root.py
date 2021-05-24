@@ -40,10 +40,10 @@ class RootController(BaseController):
     def _before(self, *args, **kw):
         tmpl_context.project_name = "proloco"
 
-    @expose('proloco.templates.masterh')
+    @expose('proloco.templates.master')
     def index(self):
         """Handle the front-page."""
-        return dict(page='masterh', pagina=Connect.body("", "index"), luogo="index")
+        return dict(page='master', pagina=Connect.body("", "index"), luogo="index")
     @expose('proloco.templates.about')
     def about(self):
         """Handle the 'about' page."""
