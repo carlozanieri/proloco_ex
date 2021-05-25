@@ -46,16 +46,17 @@ body, html { font-size: 100%; 	padding: 0; margin: 0;}
 .video{
 position: relative;
 padding-top:30px;
-padding-bottom:56.25%;
+/*padding-bottom:56.25%;*/
 height:0;
 overflow:hidden;
 }
 .video iframe{
 position:absolute;
 top:0;
-left: 0;
-width:100%;
-height:100%;
+right: 0;
+width:20%;
+height:20%;
+float:right;
 }
 body {
 	font-family: 'Lato', Calibri, Arial, sans-serif;
