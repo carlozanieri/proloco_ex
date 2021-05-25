@@ -43,6 +43,13 @@ body, html { font-size: 100%; 	padding: 0; margin: 0;}
 .clearfix:after {
 	clear: both;
 }
+.video{
+position: relative;
+padding-top:30px;
+padding-bottom:56.25%;
+height:0;
+overflow:hidden;
+}
 
 body {
 	font-family: 'Lato', Calibri, Arial, sans-serif;
