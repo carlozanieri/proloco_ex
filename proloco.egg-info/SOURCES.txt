@@ -27,6 +27,7 @@ proloco/lib/helpers.py
 proloco/model/__init__.py
 proloco/model/auth.py
 proloco/public/favicon.ico
+proloco/public/riquadro.html
 proloco/public/carousel/.gitignore
 proloco/public/carousel/LICENSE
 proloco/public/carousel/README.md
@@ -68,6 +69,7 @@ proloco/public/fonts/glyphicons-halflings-regular.eot
 proloco/public/fonts/glyphicons-halflings-regular.svg
 proloco/public/fonts/glyphicons-halflings-regular.ttf
 proloco/public/fonts/glyphicons-halflings-regular.woff
+proloco/public/img/Sponsor SPS 2020.jpg
 proloco/public/img/background.jpg
 proloco/public/img/header.png
 proloco/public/img/leaf.jpg
@@ -416,6 +418,7 @@ proloco/templates/environ.xhtml
 proloco/templates/error.xhtml
 proloco/templates/home.xhtml
 proloco/templates/home_orig.xhtml
+proloco/templates/index.html
 proloco/templates/index.xhtml
 proloco/templates/index6_1.xhtml
 proloco/templates/index_1.html
@@ -426,7 +429,6 @@ proloco/templates/ken.xhtml
 proloco/templates/ken_burns.xhtml
 proloco/templates/login.xhtml
 proloco/templates/manifestazioni.html
-proloco/templates/master-old.xhtml
 proloco/templates/master-slide.xhtml
 proloco/templates/master.xhtml
 proloco/templates/master_ok1.xhtml
@@ -434,6 +436,7 @@ proloco/templates/master_ok_3.xhtml
 proloco/templates/master_save1.xhtml
 proloco/templates/master_save2.xhtml
 proloco/templates/master_save_3.xhtml
+proloco/templates/masterh.xhtml
 proloco/templates/menu.html
 proloco/templates/menu.xhtml
 proloco/templates/menu3_2.html
@@ -460,6 +463,7 @@ proloco/templates/nivo_save2.xhtml
 proloco/templates/prolocosanpiero.xhtml
 proloco/templates/responsive.html
 proloco/templates/retina.xhtml
+proloco/templates/riquadro.html
 proloco/templates/slick.xhtml
 proloco/templates/slide-save.xhtml
 proloco/templates/slide.xhtml
