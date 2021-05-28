@@ -139,7 +139,7 @@ class RootController(BaseController):
     @expose('proloco.templates.master')
     def chisiamo(self):
         """Handle the front-page."""
-        return dict(page='master', pagina=Connect.body("", "chisiamo"))
+        return dict(page='master', pagina=Connect.body("", "chisiamo"), luogo="chisiamo")
 
     @expose('proloco.templates.nivo')
     def slide(self, luogo):
