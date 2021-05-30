@@ -146,7 +146,7 @@ class RootController(BaseController):
         """Handle the front-page."""
         return dict(page='nivo', luogo=luogo)
 
-    @expose('proloco.templates.Locura')
+    @expose('proloco.templates.manifesta')
     def locura(self):
         """Handle the front-page."""
-        return dict(page='Locura', pagina=Connect.body("", "sanpiero"), manifesta="locura")
+        return dict(page='manifesta', pagina=Connect.body("", "sanpiero"), manifestazione="locura")
