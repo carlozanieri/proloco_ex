@@ -21,6 +21,8 @@
 	font-weight: normal;
 	font-style: normal;
 }
+.flex {max-width: 100%}
+
 .img{
 	max-width: 100%
 	}
