@@ -150,3 +150,11 @@ class RootController(BaseController):
     def locura(self):
         """Handle the front-page."""
         return dict(page='manifesta', pagina=Connect.body("", "sanpiero"), manifestazione="locura")
+
+    @expose('proloco.templates.manifesta')
+    def mercanzie(self):
+        """Handle the front-page."""
+        return dict(page='manifesta', pagina=Connect.body("", "sanpiero"), manifestazione="mercanzie")
+
+
+        
