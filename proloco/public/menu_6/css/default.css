@@ -21,7 +21,13 @@
 	font-weight: normal;
 	font-style: normal;
 }
-
+.img{
+	position: relative;
+	padding-top:30px;
+	padding-bottom:56.25%;
+	height:0;
+	overflow:hidden;
+	}
 body, html { font-size: 100%; 	padding: 0; margin: 0;}
 
 /* Reset */
