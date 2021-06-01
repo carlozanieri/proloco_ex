@@ -21,11 +21,16 @@
 	font-weight: normal;
 	font-style: normal;
 }
-.flex {max-width: 100%}
-
-img {
+.flex {
+	position: relative;
+	padding-top:30px;
+	padding-bottom:56.25%;
+	height:0;
+	overflow:hidden;
 	max-width: 100%;
-  }
+	}
+
+
 body, html { font-size: 100%; 	padding: 0; margin: 0;}
 
 /* Reset */
