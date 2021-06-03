@@ -23,19 +23,22 @@
 }
 .flex{
 	
-	/*padding-top:30px;
-	padding-bottom:56.25%;
-	height:0;*/
-	overflow:hidden;
+	position: relative;
+	padding-top:10px;
+	padding-bottom:16.25%;
 	max-width:100%;
+		max-height:100%;
+	overflow:hidden;
+	
 	}
 	
 	.flex img{
 		position:absolute;
 		top:0;
-		left: 0;
-		width:100%;
-		height:100%;
+		left: 20%;
+		right: 20%;
+		max-width:100%;
+		max-height:100%;
 		}
 
 
