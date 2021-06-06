@@ -17,15 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_6/css/default.css')}" />
 		<link rel="stylesheet" type="text/css" href="${tg.url('/menu_6/css/component.css')}" />
 		<script src="${tg.url('/menu_6/js/modernizr.custom.js')}"></script>
-		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
-    <!-- css files -->
-    <link rel="stylesheet" href="${tg.url('/MENU/css/style.css')}"/>
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <!-- js files -->
-    <style>
-.content { margin:50px auto; max-width:728px; line-height:1.7}
 
-    </style>
 	</head>
 	<?python
 from proloco.Connect import Connect
@@ -37,29 +29,32 @@ submenu2=Connect.submnu2("")
 
 
 <header class="container demo-5">
-	<img  src="${tg.url('/img/header.png')}"  style=" margin-left:14%; margin-right:20%;"/>
-<div class="nav-bar">
-        <a href=""><i class="fa fa-bars"></i><span>Menu</span></a>
-    </div>
-    <!-- navigation -->
-    <nav>
-        <ul>
+<div class="art-header">
+<div class="art-logo">
+</div>
+</div>
+<div id="dl-menu" class="dl-menuwrapper">
 
+<button class="dl-trigger" style=" float:left;">Open Menu</button>
 
-            <li class="sub-menu" py:for="menus in menu">
-                <a href="${ menus[6] }"> <i class="fa fa-eye-slash"></i>${menus[4]}</a>
-                <ul class="children">
-                    <li py:for="submenus in submenu" >
+						<ul class="dl-menu">
+
+							<li py:for="menus in menu">
+                				<a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
+								<ul class="dl-submenu">
+									<li py:for="submenus in submenu" >
 
                         					<a py:if="menus[1] == submenus[2]" href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
 
 									</li>
-                </ul>
 
-            </li>
-            <li><a href="#"><i class="fa fa-envelope"></i>Contact</a></li>
-        </ul>
-    </nav> <!-- navigation end -->
+								</ul>
+							</li>
+
+
+						</ul>
+
+					</div>
 
 </header>
 <!--<py:include href="masterh.xhtml"/>-->
@@ -70,7 +65,7 @@ submenu2=Connect.submnu2("")
 			<div>
 
 				<div>
-
+					<img  src="${tg.url('/img/header.png')}"  style=" margin-left:14%; margin-right:20%;"/>
 					<iframe  marginheight="0px" marginwidth="0px" width="100%" height="400px" src="/slide?luogo=${pagina[2]}" frameborder="no" scrolling="no"/>
 
 				</div>

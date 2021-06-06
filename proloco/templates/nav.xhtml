@@ -20,6 +20,13 @@
     </style>
 
 </head>
+	<?python
+from proloco.Connect import Connect
+menu=Connect.menu("")
+submenu=Connect.submnu("")
+submenu2=Connect.submnu2("")
+
+?>
 <body>
 <!-- header starts -->
 <header>
@@ -30,23 +37,16 @@
     <!-- navigation -->
     <nav>
         <ul>
-            <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-            <li><a href="#"><i class="fa fa-cog"></i>About</a></li>
-            <li class="sub-menu">
-                <a href="#"><i class="fa fa-street-view"></i>Galerry <i class="fa fa-angle-down"></i></a>
-                <!-- children nav -->
-                <ul class="children">
-                    <li><a href=""><span>-</span> Sub item 1</a></li>
-                    <li><a href=""><span>-</span> Sub item 2</a></li>
-                    <li><a href=""><span>-</span> Sub item 3</a></li>
-                </ul>
-            </li>
-            <li class="sub-menu"><a href="#"><i class="fa fa-eye-slash"></i>Blog <i class="fa fa-angle-down"></i></a>
 
+
+            <li class="sub-menu" py:for="menus in menu">
+                <a href="${ menus[6] }"> <i class="fa fa-eye-slash"></i>${menus[4]}</a>
                 <ul class="children">
-                    <li><a href=""><span>-</span> Sub item 1</a></li>
-                    <li><a href=""><span>-</span> Sub item 2</a></li>
-                    <li><a href=""><span>-</span> Sub item 3</a></li>
+                    <li py:for="submenus in submenu" >
+
+                        					<a py:if="menus[1] == submenus[2]" href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
+
+									</li>
                 </ul>
 
             </li>
