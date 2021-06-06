@@ -122,9 +122,9 @@ class RootController(BaseController):
     def home(self):
         return dict(page='home')
 
-    @expose('proloco.templates.index6')
+    @expose('proloco.templates.nav')
     def menu(self):
-        return dict(page='index6', pagina=Connect.body("", "mugello"))
+        return dict(page='nav', pagina=Connect.body("", "mugello"), luogo="sanpiero")
 
     @expose('proloco.templates.master')
     def mugello(self):
