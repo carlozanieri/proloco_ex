@@ -34,9 +34,9 @@
 .stellarnav.light li a { color: #000; }
 
 /* dark theme */
-.stellarnav.dark { background: rgba(0, 0, 0, 1); }
+.stellarnav.dark { background: #4d0f00; }
 .stellarnav.dark a { color: #FFF; }
-.stellarnav.dark ul ul { background: rgba(0, 0, 0, 1); }
+.stellarnav.dark ul ul { background: #4d0f00; }
 .stellarnav.dark li a { color: #FFF; }
 /* sticky nav */
 .stellarnav.fixed { position: fixed; width: 100%; top: 0; left: 0; z-index: 9999; }
@@ -121,7 +121,7 @@ body.stellarnav-noscroll-x { overflow-x: hidden; }
 .stellarnav.mobile li.call-btn-mobile, .stellarnav.mobile li.location-btn-mobile { display: inline-block; width: 50%; text-transform: uppercase; text-align: center; }
 .stellarnav.mobile li.call-btn-mobile.full, .stellarnav.mobile li.location-btn-mobile.full { display: block; width: 100%; text-transform: uppercase; border-right: 0; text-align: left; }
 .stellarnav.mobile.light ul { background: rgba(255, 255, 255, 1); }
-.stellarnav.mobile.dark ul { background: rgba(0, 0, 0, 1); }
+.stellarnav.mobile.dark ul { background: #4d0f00; }
 .stellarnav.mobile.dark ul ul { background: rgba(255, 255, 255, .08); }
 .stellarnav.mobile.light li.call-btn-mobile { border-right: 1px solid rgba(0, 0, 0, .1); }
 .stellarnav.mobile.top { position: absolute; width: 100%; top: 0; left: 0; z-index: 9999; }
