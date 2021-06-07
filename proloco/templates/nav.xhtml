@@ -4,7 +4,7 @@
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
-	<title>StellarNav.js - A Powerful Responsive Navigation</title>
+
 	<link href="https://fonts.googleapis.com/css?family=Exo+2:300,400" rel="stylesheet"/>
 	<!-- required -->
 	<link rel="stylesheet" type="text/css" media="all" href="${tg.url('/stellarnav/css/stellarnav.css')}"/>
@@ -24,15 +24,31 @@ body { height: 3200px; font-size: 16px; font-family: 'Exo 2', sans-serif; backgr
 </style>
 
 </head>
+	<?python
+from proloco.Connect import Connect
+menu=Connect.menu("")
+submenu=Connect.submnu("")
+submenu2=Connect.submnu2("")
 
+?>
 <body>
 	<div class="header">
-		<a href="#">StellarNav.js</a>
-		<p>Responsive, Lightweight, Multi-Level Dropdown Menu.</p>
+
 	</div>
 	<div class="stellarnav">
 		<ul>
-			<li><a href="">Dropdown</a>
+			<li py:for="menus in menu">
+                				<a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
+								<ul class="dl-submenu">
+									<li py:for="submenus in submenu" >
+
+                        					<a py:if="menus[1] == submenus[2]" href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
+
+									</li>
+
+								</ul>
+							</li>
+	<!--		<li><a href="">Dropdown</a>
 		    	<ul>
 						<li><a href="#">How deep?</a>
 		    			<ul>
@@ -89,7 +105,7 @@ body { height: 3200px; font-size: 16px; font-family: 'Exo 2', sans-serif; backgr
 		    	</ul>
 		    </li>
 
-		    <li><a href="">Item 2</a></li>
+		   <li><a href="">Item 2</a></li>
 		    <li><a href="">Item 3</a></li>
 		    <li><a href="">Item 4</a></li>
 		    <li><a href="">Item 5</a></li>
@@ -123,7 +139,7 @@ body { height: 3200px; font-size: 16px; font-family: 'Exo 2', sans-serif; backgr
 		    		<li><a href="#">Item</a></li>
 		    		<li><a href="#">Item</a></li>
 		    	</ul>
-		    </li>
+		    </li> -->
 		</ul>
 	</div><!-- .stellarnav -->
 
