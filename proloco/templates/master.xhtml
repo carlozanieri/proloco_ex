@@ -36,30 +36,133 @@ submenu2=Connect.submnu2("")
 ?>
 
 
-<header class="container demo-5">
-<!--	<img  src="${tg.url('/img/header.png')}"  style=" margin-left:14%; margin-right:20%;"/>-->
-<div class="nav-bar">
-        <a href=""><i class="fa fa-bars"></i><span>Menu</span></a>
-    </div>
-    <!-- navigation -->
-    <nav>
-        <ul>
+<header >
+<div class="header">
 
-
-            <li class="sub-menu" py:for="menus in menu">
-                <a href="${ menus[6] }"> <i class="fa fa-eye-slash"></i>${menus[4]}</a>
-                <ul class="children">
-                    <li py:for="submenus in submenu" >
+	</div>
+	<div class="stellarnav">
+		<ul>
+			<li py:for="menus in menu">
+                				<a href="${ menus[6] }" class="gn-icon gn-icon-help">${menus[4]}</a>
+								<ul class="dl-submenu">
+									<li py:for="submenus in submenu" >
 
                         					<a py:if="menus[1] == submenus[2]" href="${submenus[6]}" ><span></span> ${submenus[4]}</a>
 
 									</li>
-                </ul>
 
-            </li>
-            <li><a href="#"><i class="fa fa-envelope"></i>Contact</a></li>
-        </ul>
-    </nav> <!-- navigation end -->
+								</ul>
+							</li>
+	<!--		<li><a href="">Dropdown</a>
+		    	<ul>
+						<li><a href="#">How deep?</a>
+		    			<ul>
+				    		<li><a href="#">Deep</a>
+				    			<ul>
+				    				<li><a href="#">Even deeper</a>
+				    					<ul>
+				    						<li><a href="#">Item</a></li>
+				    						<li><a href="#">Item</a></li>
+				    						<li><a href="#">Item</a></li>
+				    					</ul>
+				    				</li>
+				    				<li><a href="#">Item</a></li>
+				    				<li><a href="#">Item</a></li>
+				    				<li><a href="#">Item</a></li>
+				    			</ul>
+				    		</li>
+				    		<li><a href="#">Item</a></li>
+				    		<li><a href="#">Item</a></li>
+				    		<li><a href="#">Item</a></li>
+				    		<li><a href="#">Item</a></li>
+		    			</ul>
+		    		</li>
+		    		<li><a href="#">Item</a>
+		    			<ul>
+				    		<li><a href="#">Item</a></li>
+				    		<li><a href="#">Item</a></li>
+				    		<li><a href="#">Item</a></li>
+				    		<li><a href="#">Item</a></li>
+		    			</ul>
+		    		</li>
+		    		<li><a href="#">Item</a>
+		    			<ul>
+		    				<li><a href="#">Deeper</a>
+		    					<ul>
+		    						<li><a href="#">Item</a></li>
+		    						<li><a href="#">Item</a></li>
+		    						<li><a href="#">Item</a></li>
+		    					</ul>
+		    				</li>
+		    				<li><a href="#">Item</a></li>
+		    				<li><a href="#">Item</a></li>
+		    				<li><a href="#">Item</a></li>
+		    			</ul>
+		    		</li>
+		    		<li><a href="#">Here's a very long item.</a>
+		    			<ul>
+				    		<li><a href="#">Item</a></li>
+				    		<li><a href="#">Item</a></li>
+				    		<li><a href="#">Item</a></li>
+				    		<li><a href="#">Item</a></li>
+		    			</ul>
+		    		</li>
+		    	</ul>
+		    </li>
+
+		   <li><a href="">Item 2</a></li>
+		    <li><a href="">Item 3</a></li>
+		    <li><a href="">Item 4</a></li>
+		    <li><a href="">Item 5</a></li>
+		    <li><a href="">Item 6</a></li>
+		    <li class="drop-left"><a href="">Drop Left</a>
+		    	<ul>
+		    		<li><a href="#">How deep?</a>
+		    			<ul>
+				    		<li><a href="#">Deep</a>
+				    			<ul>
+				    				<li><a href="#">Even deeper</a>
+				    					<ul>
+				    						<li><a href="#">Item</a></li>
+				    						<li><a href="#">Item</a></li>
+				    						<li><a href="#">Item</a></li>
+				    					</ul>
+				    				</li>
+				    				<li><a href="#">Item</a></li>
+				    				<li><a href="#">Item</a></li>
+				    				<li><a href="#">Item</a></li>
+				    			</ul>
+				    		</li>
+				    		<li><a href="#">Item</a></li>
+				    		<li><a href="#">Item</a></li>
+				    		<li><a href="#">Item</a></li>
+				    		<li><a href="#">Item</a></li>
+		    			</ul>
+		    		</li>
+		    		<li><a href="#">Item</a></li>
+		    		<li><a href="#">Item</a></li>
+		    		<li><a href="#">Item</a></li>
+		    		<li><a href="#">Item</a></li>
+		    	</ul>
+		    </li> -->
+		</ul>
+	</div><!-- .stellarnav -->
+
+	<!-- required -->
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<script type="text/javascript" src="${tg.url('/stellarnav/js/stellarnav.min.js')}"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			jQuery('.stellarnav').stellarNav({
+				theme: 'dark',
+				breakpoint: 960,
+				position: 'right',
+				phoneBtn: '18009997788',
+				locationBtn: 'https://www.google.com/maps'
+			});
+		});
+	</script>
+	<!-- required -->
 
 </header>
 <!--<py:include href="masterh.xhtml"/>-->
