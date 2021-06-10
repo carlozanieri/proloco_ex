@@ -196,10 +196,16 @@ class Connect:
         #menu = primanota[1]["descrizione"]
         return slider
 
-    def cmd(self):
-        ret = qApp.quit
-
-        return ret
+    def news(self, luogo):
+        data = "2021-06-08 00:00:00"
+        db = MySQLdb.connect(options.mysql_host, options.mysql_user, options.mysql_password, options.mysql_database)
+        ##print(menu)
+        cursor = db.cursor()
+        cursor.execute("SELECT *  from news where published >= '" + data + "'")
+        ##cursor.execute("SELECT *  from slider")
+        slider = cursor.fetchall()
+        # menu = primanota[1]["descrizione"]
+        return slider
 
 
     def get_class(kls):
