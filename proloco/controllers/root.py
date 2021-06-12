@@ -165,3 +165,9 @@ class RootController(BaseController):
     def NEWS(self):
         """Handle the front-page."""
         return dict(page='news', pagina=Connect.body("", "sanpiero"), manifestazione="news")
+
+    @expose('proloco.templates.news_one')
+    def news_one(self, titolo,id):
+        """Handle the front-page."""
+        return dict(page='news_one', pagina=Connect.body("", "sanpiero"), titolo=titolo, id=id)
+

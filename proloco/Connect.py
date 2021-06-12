@@ -196,7 +196,7 @@ class Connect:
         #menu = primanota[1]["descrizione"]
         return slider
 
-    def news(self, luogo):
+    def news(self):
         data = "2021-06-08 00:00:00"
         db = MySQLdb.connect(options.mysql_host, options.mysql_user, options.mysql_password, options.mysql_database)
         ##print(menu)
@@ -206,6 +206,19 @@ class Connect:
         slider = cursor.fetchall()
         # menu = primanota[1]["descrizione"]
         return slider
+
+    def news_one(self, titolo, id):
+        data = "2021-06-08 00:00:00"
+        ##titolo=titolo
+        db = MySQLdb.connect(options.mysql_host, options.mysql_user, options.mysql_password, options.mysql_database)
+        ##print(titolo)
+        cursor = db.cursor()
+        ####cursor.execute("SELECT *  from news where id = 3")
+        cursor.execute("SELECT *  from news where id = '" + id + "'")
+        ##cursor.execute("SELECT *  from slider")
+        news = cursor.fetchall()
+        # menu = primanota[1]["descrizione"]
+        return news
 
 
     def get_class(kls):

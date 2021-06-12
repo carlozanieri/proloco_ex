@@ -14,13 +14,13 @@
 </head>
 <?python
 from proloco.Connect import Connect
-news=Connect.news("")
 
+news=Connect.news_one("", titolo, id)
 
 ?>
 <body>
   <div id="w">
-    <h1>NEWS</h1>
+    <h1>${titolo}</h1>
 
     <nav class="slidernav">
       <div id="navbtns" class="clearfix">
@@ -41,7 +41,7 @@ news=Connect.news("")
 
           <p>${newss[5]}</p>
 
-          <p class="readmore"><a href="/news_one?titolo=${newss[3]}&amp;id=${newss[0]}" >Read More &raquo;</a></p>
+          <p class="readmore"><a href="/NEWS?luogo=${pagina[2]}">Go Back &raquo;</a></p>
         </div><!-- post #1 -->
 
 
