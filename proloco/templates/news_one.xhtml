@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta http-equiv="Content-Type" content="text/html"/>
-  <title>Responsive Horizontal Posts Slider - Template Monster Demo</title>
+  <title></title>
   <meta name="author" content="Jake Rocheleau"/>
   <link rel="shortcut icon" href="http://static.tmimgcdn.com/img/favicon.ico"/>
   <link rel="icon" href="http://static.tmimgcdn.com/img/favicon.ico"/>
@@ -19,29 +19,24 @@ news=Connect.news_one("", titolo, id)
 
 ?>
 <body>
-  <div id="w">
-    <h1>${titolo}</h1>
+<h1>${titolo}</h1>
+  <div id="w" style="margin-left:30%;">
 
-    <nav class="slidernav">
-      <div id="navbtns" class="clearfix">
-        <a href="#" class="previous">prev</a>
-        <a href="#" class="next">next</a>
-      </div>
-    </nav>
+
 
     <div class="crsl-items" data-navigation="navbtns">
       <div class="crsl-wrap">
         <div py:for="newss in news" class="crsl-item">
           <div class="thumbnail">
-            <img class="zoom" src= "${tg.url('news/img/')}${newss[8]}" alt="${newss[3]}"/>
-            <span class="postdate">Feb 16, 2014</span>
+            <img  src= "${tg.url('news/img/')}${newss[8]}" alt="${newss[3]}"/>
+            <span class="postdate">${newss[6]}</span>
           </div>
 
           <h3><a href="#">${newss[3]}</a></h3>
 
           <p>${newss[5]}</p>
 
-          <p class="readmore"><a href="/NEWS?luogo=${pagina[2]}">Go Back &raquo;</a></p>
+          <p class="readmore"><a href="/">Go Back &raquo;</a></p>
         </div><!-- post #1 -->
 
 
