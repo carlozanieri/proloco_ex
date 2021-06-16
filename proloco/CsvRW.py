@@ -20,6 +20,7 @@ class CsvRW:
                    line_count += 1
                else:
                    with open('file3.csv', mode='w') as csv_file:
+                       nomicolonne = ['nome', 'cognome', 'citta']
                        writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
                        writer.writeheader()
                        nomicolonne = ['nome', 'cognome', 'citta']
