@@ -19,9 +19,9 @@ class CsvRW:
                    print(f'Nomi delle colonne: {", ".join(row)}')
                    line_count += 1
                else:
-                   with open('file3.csv', mode='w') as csv_file:
+                   with open('file3.csv', mode='w') as csv_filew:
                        nomicolonne = ['nome', 'cognome', 'citta']
-                       writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
+                       writer = csv.DictWriter(csv_filew, fieldnames=nomicolonne)
                        writer.writeheader()
 
                    writer.writerow(f'\t{row[0]} , {row[1]} , {row[2]}.')
