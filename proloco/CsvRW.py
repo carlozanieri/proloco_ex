@@ -19,7 +19,11 @@ class CsvRW:
                    print(f'Nomi delle colonne: {", ".join(row)}')
                    line_count += 1
                else:
-                   print(f'\t{row[0]} , {row[1]} , {row[2]}.')
+                   with open('file3.csv', mode='w') as csv_file:
+                       writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
+                       writer.writeheader()
+                       nomicolonne = ['nome', 'cognome', 'citta']
+                   writer.writerow(f'\t{row[0]} , {row[1]} , {row[2]}.')
                    line_count += 1
                print(f'File contiene {line_count} linee.')
 
