@@ -11,7 +11,7 @@ class CsvRW:
 
    def read(self):
        import csv
-       with open('./file.csv') as csv_file:
+       with open('file.csv') as csv_file:
            csv_reader = csv.reader(csv_file, delimiter=',')
            line_count = 0
            for row in csv_reader:
