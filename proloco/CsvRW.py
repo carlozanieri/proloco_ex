@@ -26,7 +26,7 @@ class CsvRW:
    def write(self):
        import csv
 
-       with open('file2.csv', mode='w') as csv_file:
+       with open('file3.csv', mode='w') as csv_file:
            nomicolonne = ['nome', 'cognome', 'citta']
            writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
            writer.writeheader()
