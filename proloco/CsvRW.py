@@ -27,7 +27,7 @@ class CsvRW:
                writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
                writer.writeheader()
                writer.writerow({'nome': 'Luca', 'cognome': 'Bianchi', 'citta': 'Roma'})
-               writer.writerow({row[0][0]} , {row[0][1]} , {row[0][2]})
+               writer.writerow({'nome': 'Giovanni', 'cognome': 'Rossi', 'citta': 'Venezia'})
 
    def write(self):
        import csv
