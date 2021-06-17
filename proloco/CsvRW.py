@@ -15,7 +15,7 @@ class CsvRW:
            line_count = 0
            for row in csv_reader:
 
-                with open('file11.csv', mode='w+',  newline='') as csv_file:
+                with open('file11.csv', mode='r+',  newline='') as csv_file:
                     nomicolonne = ['COGNOME',  'E-MAIL']
                     writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
                     writer.writeheader()
