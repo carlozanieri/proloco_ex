@@ -15,13 +15,13 @@ class CsvRW:
            line_count = 0
            for row in csv_reader:
 
-                with open('file11.csv', mode='w',  newline='') as csv_file:
+                with open('file11.csv', mode='w+',  newline='') as csv_file:
                     nomicolonne = ['nome', 'cognome', 'citta']
                     writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
                     writer.writeheader()
                     writer.writerow({'nome': 'Luca', 'cognome': 'Bianchi', 'citta': 'Roma'})
                     writer.writerow({'nome': 'Giovanni', 'cognome': 'Rossi', 'citta': row[3]})
-
+                    line_count += 1
    def write(self):
        import csv
 
