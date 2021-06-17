@@ -23,11 +23,11 @@ class CsvRW:
            print(f'File contiene {line_count} linee.')
 
            with open('file9.csv', mode='w') as csv_file:
-               nomicolonne = ['nome', 'cognome', 'citta']
-               writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
-               writer.writeheader()
-               writer.writerow({'nome': 'Luca', 'cognome': 'Bianchi', 'citta': 'Roma'})
-               writer.writerow({'nome': 'Giovanni', 'cognome': 'Rossi', 'citta': 'Venezia'})
+                nomicolonne = ['nome', 'cognome', 'citta']
+                writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
+                writer.writeheader()
+                writer.writerow({'nome': 'Luca', 'cognome': 'Bianchi', 'citta': 'Roma'})
+                writer.writerow({'nome': 'Giovanni', 'cognome': 'Rossi', 'citta': 'Venezia'})
 
    def write(self):
        import csv
