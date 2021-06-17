@@ -20,7 +20,7 @@ class CsvRW:
                else:
                    print(f'\t{row[0]} , {row[1]} , {row[2]}.')
                    line_count += 1
-           print(f'File contiene {line_count} linee.')
+                   print(f'File contiene {line_count} linee.')
 
            with open('file9.csv', mode='w') as csv_file:
                 nomicolonne = ['nome', 'cognome', 'citta']
