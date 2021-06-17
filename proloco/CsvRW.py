@@ -14,20 +14,13 @@ class CsvRW:
            csv_reader = csv.reader(csv_file, delimiter=',')
            line_count = 0
            for row in csv_reader:
-               if line_count == 0:
-                   print(f'Nomi delle colonne: {", ".join(row)}')
-                   line_count += 1
-               else:
-                   print(f'\t{row[0]} , {row[1]} , {row[2]}.')
-                   line_count += 1
-                   print(f'File contiene {line_count} linee.')
 
-                   with open('file11.csv', mode='w') as csv_file:
-                        nomicolonne = ['nome', 'cognome', 'citta']
-                        writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
-                        writer.writeheader()
-                        writer.writerow({'nome': 'Luca', 'cognome': 'Bianchi', 'citta': 'Roma'})
-                        writer.writerow({'nome': 'Giovanni', 'cognome': 'Rossi', 'citta': row[3]})
+                with open('file11.csv', mode='w') as csv_file:
+                    nomicolonne = ['nome', 'cognome', 'citta']
+                    writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
+                    writer.writeheader()
+                    writer.writerow({'nome': 'Luca', 'cognome': 'Bianchi', 'citta': 'Roma'})
+                    writer.writerow({'nome': 'Giovanni', 'cognome': 'Rossi', 'citta': row[3]})
 
    def write(self):
        import csv
