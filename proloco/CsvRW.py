@@ -16,10 +16,10 @@ class CsvRW:
            for row in csv_reader:
 
                 with open('file11.csv', mode='w+',  newline='') as csv_file:
-                    nomicolonne = ['nome', 'cognome', 'citta']
+                    nomicolonne = ['COGNOME', 'NOME', 'E-MAIL']
                     writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
                     writer.writeheader()
-                    writer.writerow({'nome': 'Luca', 'cognome': 'Bianchi', 'citta': 'Roma'})
+                    writer.writerow({'COGNOME': row[3], 'NOME': row[3], 'E-MAIL': row[4]})
                     writer.writerow({row[3] + " " + row[4]})
                     line_count += 1
    def write(self):
