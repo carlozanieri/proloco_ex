@@ -23,7 +23,8 @@ class CsvRW:
                        nomicolonne = ['nome', 'cognome', 'citta']
                        writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
                        writer.writeheader()
-                       writer.writerow({row[1]},{row[2]} )
+                       writer.writerow({'nome': 'Luca', 'cognome': 'Bianchi', 'citta': 'Roma'})
+                       writer.writerow({'nome': 'Giovanni', 'cognome': 'Rossi', 'citta': 'Venezia'})
 
                    line_count += 1
                print(f'File contiene {line_count} linee.')
