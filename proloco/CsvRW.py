@@ -13,7 +13,7 @@ class CsvRW:
        with open('file.csv') as csv_file:
            csv_reader = csv.reader(csv_file, delimiter=',')
            line_count = 0
-           with open('file11.csv', mode='w+', newline='') as csv_file:
+           with open('file12.csv', mode='w+', newline='') as csv_file:
                 nomicolonne = ['NOME', 'E-MAIL']
                 writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
                 writer.writeheader()
