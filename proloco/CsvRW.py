@@ -21,8 +21,8 @@ class CsvRW:
                     writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
                     writer.writeheader()
                     data= [ {'COGNOME': row[2] + " " + row[3] , 'NOME': row[3], 'E-MAIL': row[4]}]
-                    writer.writerow(data)
-                    ##writer.writerow({'COGNOME': row[2] + " " + row[3] , 'E-MAIL': row[4]})
+                   ### writer.writerow(data)
+                    writer.writerow({'COGNOME': row[2] + " " + row[3] , 'E-MAIL': row[4]})
                     print({'COGNOME': row[2] + " " + row[3] , 'NOME': row[3], 'E-MAIL': row[4]})
                     line_count += 1
    def write(self):
