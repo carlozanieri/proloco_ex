@@ -19,8 +19,6 @@ class CsvRW:
                 writer.writeheader()
                 for row in csv_reader:
 
-                    data= [ {'NOME': row[2] + " " + row[3] , 'NOME': row[3], 'E-MAIL': row[4]}]
-                   ### writer.writerow(data)
                     writer.writerow({'NOME': row[2] + " " + row[3] , 'E-MAIL': row[4]})
                     print({'NOME': row[2] + " " + row[3] , 'NOME': row[3], 'E-MAIL': row[4]})
                     line_count += 1
