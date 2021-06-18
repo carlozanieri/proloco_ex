@@ -21,8 +21,8 @@ class CsvRW:
 
                     data= [ {'NOME': row[2] + " " + row[3] , 'NOME': row[3], 'E-MAIL': row[4]}]
                    ### writer.writerow(data)
-                    writer.writerow({'COGNOME': row[2] + " " + row[3] , 'E-MAIL': row[4]})
-                    print({'COGNOME': row[2] + " " + row[3] , 'NOME': row[3], 'E-MAIL': row[4]})
+                    writer.writerow({'NOME': row[2] + " " + row[3] , 'E-MAIL': row[4]})
+                    print({'NOME': row[2] + " " + row[3] , 'NOME': row[3], 'E-MAIL': row[4]})
                     line_count += 1
    def write(self):
        import csv
