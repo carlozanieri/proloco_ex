@@ -10,10 +10,10 @@ import csv
 class CsvRW:
 
    def read(self):
-       with open('file.csv') as csv_file:
+       with open('tesserati.csv') as csv_file:
            csv_reader = csv.reader(csv_file, delimiter=',')
            line_count = 0
-           with open('file12.csv', mode='w+', newline='') as csv_file:
+           with open('tesserati2021.csv', mode='w+', newline='') as csv_file:
 
                 line_count = 0
                 for row in csv_reader:
@@ -23,8 +23,8 @@ class CsvRW:
                         writer.writeheader()
                         line_count += 1
                     else:
-                        writer.writerow({'NOME': row[2] + " " + row[3] , 'E-MAIL': row[4]})
-                        print({'NOME': row[2] + " " + row[3] , 'NOME': row[3], 'E-MAIL': row[4]})
+                        writer.writerow({'NOME': row[0] + " " + row[1] , 'E-MAIL': row[2]})
+                        print({'NOME': row[0] + " " + row[1] , 'NOME': row[2], 'E-MAIL': row[3]})
                         line_count += 1
    def write(self):
        import csv
