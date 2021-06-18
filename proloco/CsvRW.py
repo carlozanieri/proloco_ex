@@ -14,14 +14,18 @@ class CsvRW:
            csv_reader = csv.reader(csv_file, delimiter=',')
            line_count = 0
            with open('file12.csv', mode='w+', newline='') as csv_file:
-                nomicolonne = ['NOME', 'E-MAIL']
-                writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
-                writer.writeheader()
-                for row in csv_reader:
 
-                    writer.writerow({'NOME': row[2] + " " + row[3] , 'E-MAIL': row[4]})
-                    print({'NOME': row[2] + " " + row[3] , 'NOME': row[3], 'E-MAIL': row[4]})
-                    line_count += 1
+                line_count = 0
+                for row in csv_reader:
+                    if line_count == 0:
+                        nomicolonne = ['NOME', 'E-MAIL']
+                        writer = csv.DictWriter(csv_file, fieldnames=nomicolonne)
+                        writer.writeheader()
+                        line_count += 1
+                    else:
+                        writer.writerow({'NOME': row[2] + " " + row[3] , 'E-MAIL': row[4]})
+                        print({'NOME': row[2] + " " + row[3] , 'NOME': row[3], 'E-MAIL': row[4]})
+                        line_count += 1
    def write(self):
        import csv
 
