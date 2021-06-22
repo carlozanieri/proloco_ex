@@ -3,6 +3,7 @@ README.txt
 setup.cfg
 setup.py
 proloco/Connect.py
+proloco/CsvRW.py
 proloco/__init__.py
 proloco/primanota.py
 proloco.egg-info/PKG-INFO
@@ -238,7 +239,11 @@ proloco/public/menu_6/js/jquery.dlmenu.js
 proloco/public/menu_6/js/modernizr.custom.js
 proloco/public/news/index.html
 proloco/public/news/css/styles.css
+proloco/public/news/img/ProlocoSPS_tesseramento_2021.jpg
+proloco/public/news/img/Villa Adami Venerdi 2021.jpg
 proloco/public/news/img/brushed.png
+proloco/public/news/img/simposio4.jpg
+proloco/public/news/img/simposio5.jpg
 proloco/public/news/img/thumb01.jpg
 proloco/public/news/img/thumb02.jpg
 proloco/public/news/img/thumb03.jpg
@@ -298,8 +303,10 @@ proloco/templates/menu.xhtml
 proloco/templates/menu_css.xhtml
 proloco/templates/mixed.xhtml
 proloco/templates/mugello.xhtml
+proloco/templates/news-save.xhtml
 proloco/templates/news-slider.xhtml
 proloco/templates/news.xhtml
+proloco/templates/news_one.xhtml
 proloco/templates/nivo.html
 proloco/templates/nivo.xhtml
 proloco/templates/nivo_save.xhtml
@@ -317,6 +324,7 @@ proloco/templates/slip.xhtml
 proloco/templates/square.xhtml
 proloco/templates/square_menu.css
 proloco/templates/template.xhtml.template
+proloco/templates/__pycache__/__init__.cpython-39.pyc
 proloco/templates/fonts/icomoon.dev.svg
 proloco/templates/fonts/icomoon.eot
 proloco/templates/fonts/icomoon.svg
