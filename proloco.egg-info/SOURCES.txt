@@ -5,6 +5,7 @@ setup.py
 proloco/Connect.py
 proloco/CsvRW.py
 proloco/__init__.py
+proloco/google.py
 proloco/primanota.py
 proloco.egg-info/PKG-INFO
 proloco.egg-info/SOURCES.txt

@@ -171,3 +171,7 @@ class RootController(BaseController):
         """Handle the front-page."""
         return dict(page='news_one', pagina=Connect.body("", "sanpiero"), titolo=titolo, id=id)
 
+    @expose('proloco.templates.ins_menu')
+    def ins_menu(self):
+        """Handle the front-page."""
+        return dict(page='ins_menu', pagina=Connect.body("", "sanpiero"))
