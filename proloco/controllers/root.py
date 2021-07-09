@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Main Controller"""
-
+import requests
 from tg import expose, flash, require, url, lurl
 from tg import request, redirect, tmpl_context
 from tg.i18n import ugettext as _, lazy_ugettext as l_
@@ -8,16 +8,29 @@ from tg.exceptions import HTTPFound
 from tg import predicates
 from proloco import model
 from proloco.controllers.secure import SecureController
+from proloco.flask_upload_files import allowed_file
 from proloco.model import DBSession
 from tgext.admin.tgadminconfig import BootstrapTGAdminConfig as TGAdminConfig
 from tgext.admin.controller import AdminController
-
+from proloco.model.userfile import UserFile
 from proloco.lib.base import BaseController
 from proloco.controllers.error import ErrorController
 from proloco.Connect import Connect
+from proloco.Upload import Upload
+import requests
+import sys
+import proloco.flask_upload_files
+import os
+import tempfile
+import flask
+# Python2
+# import StringIO
+LLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+from io import StringIO
+from werkzeug.utils import secure_filename
 __all__ = ['RootController']
 
-
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 class RootController(BaseController):
     """
     The root controller for the proloco application.
@@ -175,3 +188,136 @@ class RootController(BaseController):
     def ins_menu(self):
         """Handle the front-page."""
         return dict(page='ins_menu', pagina=Connect.body("", "sanpiero"))
+
+    @expose('proloco.templates.upload')
+    def upload(self):
+        return dict(page='upload', file='file', pagina=Connect.body("", "sanpiero"))
+
+    @expose('proloco.templates.upload')
+    def save(userfile):
+
+        proloco.flask_upload_files.single_upload_chunked(userfile)
+        return dict(page='upload',file=userfile ,pagina=Connect.body("", "sanpiero"))
+
+@expose()
+def single_upload_chunked(filename=None):
+    """Saves single file uploaded from <input type="file">, uses stream to read in by chunks
+
+       When using direct access to flask.request.stream
+       you cannot access request.file or request.form first,
+       otherwise stream is already parsed and empty
+       This is because of internal workings of werkzeug
+
+       Positive test:
+       curl -X POST http://localhost:8080/singleuploadchunked/car.jpg -d "@tests/car.jpg"
+
+       Negative test (no file uploaded, no Content-Length header):
+       curl -X POST http://localhost:8080/singleuploadchunked/car.jpg
+       Negative test (not whitelisted file extension):
+       curl -X POST http://localhost:8080/singleuploadchunked/testdoc.docx -d "@tests/testdoc.docx"
+    """
+    if "Content-Length" not in flask.request.headers:
+        add_flash_message("did not sense Content-Length in headers")
+        return flask.redirect(flask.url_for("upload_form"))
+
+    if filename is None or filename == '':
+        add_flash_message("did not sense filename in form action")
+        return flask.redirect(flask.url_for("upload_form"))
+
+    if not allowed_file(filename):
+        add_flash_message("not going to process file with extension " + filename)
+        return flask.redirect(flask.url_for("upload_form"))
+
+    print("Total Content-Length: " + flask.request.headers['Content-Length'])
+    fileFullPath = os.path.join("/home/carlo/", filename)
+
+
+    try:
+        with open(fileFullPath, "wb") as f:
+            reached_end = False
+
+    except OSError as e:
+        add_flash_message("ERROR writing file " + filename + " to disk: " + StringIO(str(e)).getvalue())
+        return flask.redirect(flask.url_for("upload_form"))
+
+    print("")
+    add_flash_message("SUCCESS uploading single file: " + filename)
+    return flask.redirect(flask.url_for("upload_form"))
+
+
+@expose()
+def multiple_upload(file_element_name="files[]"):
+    """Saves files uploaded from <input type="file">, can be multiple files
+
+       Positive Test (single file):
+       curl -X POST http://localhost:8080/multipleupload -F "files[]=@tests/car.jpg"
+       Positive Test (multiple files):
+       curl -X POST http://localhost:8080/multipleupload -F "files[]=@tests/car.jpg" -F "files[]=@tests/testdoc.pdf"
+
+       Negative Test (using GET method):
+       curl -X GET http://localhost:8080/multipleupload
+       Negative Test (no input file element):
+       curl -X POST http://localhost:8080/multipleupload
+       Negative Test (not whitelisted file extension):
+       curl -X POST http://localhost:8080/multipleupload -F "files[]=@tests/testdoc.docx"
+    """
+
+    # must be POST/PUT
+    if flask.request.method not in ['POST', 'PUT']:
+        add_flash_message("Can only upload on POST/PUT methods")
+        return flask.redirect(flask.url_for("upload_form"))
+
+    # files will be materialized as soon as we touch request.files,
+    # so check for errors right up front
+    try:
+        flask.request.files
+    except OSError as e:
+        print("ERROR ON INITIAL TOUCH OF request.files")
+        add_flash_message("ERROR materializing files to disk: " + StringIO(str(e)).getvalue())
+        return flask.redirect(flask.url_for("upload_form"))
+
+    # must have <input type="file"> element
+    if file_element_name not in flask.request.files:
+        add_flash_message('No files uploaded')
+        return flask.redirect(flask.url_for("upload_form"))
+
+    # get list of files uploaded
+    files = flask.request.files.getlist(file_element_name)
+
+    # if user did not select file, filename will be empty
+    if len(files) == 1 and files[0].filename == '':
+        add_flash_message('No selected file')
+        return flask.redirect(flask.url_for("upload_form"))
+
+    # loop through uploaded files, saving
+    for ufile in files:
+        try:
+            filename = secure_filename(ufile.filename)
+            if allowed_file(filename):
+                print("uploading file {} of type {}".format(filename, ufile.content_type))
+                ufile.save("/home/carlo/", filename)
+                flask.flash("Just uploaded: " + filename)
+            else:
+                add_flash_message("not going to process file with extension " + filename)
+        except OSError as e:
+            add_flash_message("ERROR writing file " + filename + " to disk: " + StringIO(str(e)).getvalue())
+
+    return flask.redirect(flask.url_for("upload_form"))
+
+
+def add_flash_message(msg):
+    """Provides message to end user in browser"""
+    print(msg)
+    flask.flash(msg)
+
+
+# from console it is the standard '__main__', but from docker flask it is 'main'
+if __name__ == "__main__" or __name__ == "main":
+
+    # docker flask image
+    if __name__ == "main":
+        if not os.getenv("TEMP_DIR") is None:
+            if os.path.isdir(os.getenv("TEMP_DIR")):
+                print("Overriding tempdir for docker image")
+                tempfile.tempdir = os.getenv("TEMP_DIR")
+    print("tempdir: " + tempfile.gettempdir())

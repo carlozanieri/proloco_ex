@@ -1,11 +1,19 @@
-<html>
-    <head><title>$pagina</title></head>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/></head>
     <body>
-        <h1>$pagina</h1>
-        <ul>
-            <li py:for="x in range(repetitions)">
-                This is item ${x}
-            </li>
-        </ul>
+        <h1>${pagina[2]}</h1>
+        <p>${pagina[5]}</p>
+
+    <div>
+  <form action="/save" method="post">
+    <input type="hidden" name="pagename" value="${pagina[2]}"/>
+    <input type="text" name="data" value=""/>
+    <input type="submit" name="submit" value="Save"/>
+  </form>
+</div>
     </body>
 </html>

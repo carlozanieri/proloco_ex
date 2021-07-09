@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+
+      xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://genshi.edgewall.org/ ">
+
+<head>
+
+    <title>TurboGears File Upload Example</title>
+</head>
+
+<body>
+<p>${file} ---- ${pagina[10]}</p>
+<form method="post" action="save" enctype="multipart/form-data">
+    Select File:<br/>
+    <input type="file" name="userfile"/> <br/>
+    <input type="submit" value="save"/>
+</form>
+
+
+</body>
+</html>
