@@ -1,17 +1,17 @@
-TurboGears2>=2.4.3
+Babel
 Beaker>=1.8.0
 Kajiki>=0.6.3
-zope.sqlalchemy>=1.2
-sqlalchemy
+TurboGears2>=2.4.3
+WebHelpers2
 alembic
 repoze.who
-tw2.forms
+sqlalchemy
 tgext.admin>=0.6.1
-WebHelpers2
-Babel
+tw2.forms
+zope.sqlalchemy>=1.2
 
 [testing]
 WebTest>=1.2.3
-nose
 coverage
 gearbox
+nose

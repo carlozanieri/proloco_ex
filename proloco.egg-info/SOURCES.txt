@@ -29,6 +29,7 @@ fileupload/tests/models/__init__.py
 fileupload/tests/models/test_auth.py
 proloco/Connect.py
 proloco/CsvRW.py
+proloco/Upload.py
 proloco/__init__.py
 proloco/flask_upload_files.py
 proloco/google.py
@@ -48,6 +49,7 @@ proloco/config/application.py
 proloco/controllers/__init__.py
 proloco/controllers/error.py
 proloco/controllers/root.py
+proloco/controllers/root_save.py
 proloco/controllers/secure.py
 proloco/i18n/ru/LC_MESSAGES/proloco.po
 proloco/lib/__init__.py
@@ -356,6 +358,8 @@ proloco/templates/square.xhtml
 proloco/templates/square_menu.css
 proloco/templates/template.xhtml.template
 proloco/templates/upload.xhtml
+proloco/templates/upload_form.xhtml
+proloco/templates/__pycache__/__init__.cpython-38.pyc
 proloco/templates/__pycache__/__init__.cpython-39.pyc
 proloco/templates/fonts/icomoon.dev.svg
 proloco/templates/fonts/icomoon.eot
