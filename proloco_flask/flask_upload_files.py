@@ -31,7 +31,7 @@ def allowed_file(filename):
 @app.route("/")
 def entry_point():
     """ simple entry for test """
-    return flask.render_template('index.html',  tempdir=tempfile.gettempdir(), menu=Connect.menu(""), submenu=Connect.submnu(""), submenu2=Connect.submnu2(""))
+    return flask.render_template('index.xhtml',  tempdir=tempfile.gettempdir(), menu=Connect.menu(""), submenu=Connect.submnu(""), submenu2=Connect.submnu2(""))
 
 @app.route("/master")
 def master():

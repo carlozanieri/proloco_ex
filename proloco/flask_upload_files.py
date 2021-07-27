@@ -15,7 +15,7 @@ from werkzeug.utils import secure_filename
 # whitelist of file extensions
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
-app = flask.Flask(__name__)
+app = flask.Flask(__name__, static_folder="static")
 
 @app.errorhandler(OSError)
 def handle_oserror(oserror):
