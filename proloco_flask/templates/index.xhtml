@@ -14,8 +14,7 @@
 
 		<link  href='http://fonts.googleapis.com/css?family=Roboto'  type='text/css' />
 		<link rel="stylesheet" href="{{url_for('static', filename = 'menu_6/css/component.css')}}"  type='text/css'/>
-	<script type='text/javascript' href="{{url_for('static', filename = 'stellarnav/js/stellarnav.js')}}"/>
-	<script type='text/javascript' href="{{url_for('static', filename = 'menu_6/js/modernizr.custom.js')}}"/>
+
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type='text/css'/>
  <style>
 .content { margin:50px auto; max-width:728px; line-height:1.7}
@@ -36,17 +35,7 @@ body { height: 3200px; font-size: 16px; font-family: 'Exo 2', sans-serif; backgr
 </style>
 </head>
 <header>
-<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			jQuery('.stellarnav').stellarNav({
-				theme: 'dark',
-				breakpoint: 960,
-				position: 'right',
-				phoneBtn: '18009997788',
-				locationBtn: 'https://www.google.com/maps'
-			});
-		});
-	</script>
+
 
 <div class="stellarnav">
 
@@ -72,6 +61,20 @@ body { height: 3200px; font-size: 16px; font-family: 'Exo 2', sans-serif; backgr
 		{% endfor %}
 	</ul>
 </div>
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<script type='text/javascript' href="{{url_for('static', filename = 'stellarnav/js/stellarnav.js')}}"/>
+	<script type='text/javascript' href="{{url_for('static', filename = 'menu_6/js/modernizr.custom.js')}}"/>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			jQuery('.stellarnav').stellarNav({
+				theme: 'dark',
+				breakpoint: 960,
+				position: 'right',
+				phoneBtn: '18009997788',
+				locationBtn: 'https://www.google.com/maps'
+			});
+		});
+	</script>
 	</header>
 <body>
 <h1>python-flask-upload-files</h1>
