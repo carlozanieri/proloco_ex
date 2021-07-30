@@ -8,12 +8,11 @@
 	<link href="https://fonts.googleapis.com/css?family=Exo+2:300,400" rel="stylesheet" type='text/css'/>
 
 	<link rel="shortcut icon" href="{{url_for('static', filename = 'favicon.ico')}}"/>
-	<link href="{{url_for('static', filename = 'menu_6/css/default.css')}}" rel='stylesheet' type='text/css'/>
+	<link rel="stylesheet"  href="{{url_for('static', filename = 'menu_6/css/component.css')}}"  type='text/css'/>
+	<link  rel="stylesheet" href="{{url_for('static', filename = 'menu_6/css/default.css')}}" type='text/css'/>
+	<link rel="stylesheet" href="{{ url_for('static', filename='stellarnav/css/stellarnav.css') }}" type='text/css'/>
+	<link  rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto'  type='text/css' />
 
-	<link href="{{url_for('static', filename = 'stellarnav/css/stellarnav.css')}}" rel="stylesheet" type='text/css'/>
-
-		<link  href='http://fonts.googleapis.com/css?family=Roboto'  type='text/css' />
-		<link rel="stylesheet" href="{{url_for('static', filename = 'menu_6/css/component.css')}}"  type='text/css'/>
 
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type='text/css'/>
  <style>
@@ -41,7 +40,7 @@ body { height: 3200px; font-size: 16px; font-family: 'Exo 2', sans-serif; backgr
 
 	<ul>
 
-		{% for menus in menu%}
+		{% for menus in menu %}
 
 		<li >
 			<a href="{{ menus[6] }}" class="gn-icon gn-icon-help">{{menus[4]}}</a>
@@ -55,6 +54,7 @@ body { height: 3200px; font-size: 16px; font-family: 'Exo 2', sans-serif; backgr
 					<a  href="{{submenus[6]}}" ><span></span> {{submenus[4]}}</a>
 					{% endif %}
 				</li>
+
 				{% endfor %}
 			</ul>
 		</li>
@@ -62,8 +62,8 @@ body { height: 3200px; font-size: 16px; font-family: 'Exo 2', sans-serif; backgr
 	</ul>
 </div>
 	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-	<script type='text/javascript' href="{{url_for('static', filename = 'stellarnav/js/stellarnav.js')}}"/>
-	<script type='text/javascript' href="{{url_for('static', filename = 'menu_6/js/modernizr.custom.js')}}"/>
+	<script type='text/javascript' src="{{url_for('static', filename = 'stellarnav/js/stellarnav.js')}}"></script>
+	<script type='text/javascript' src="{{url_for('static', filename = 'menu_6/js/modernizr.custom.js')}}"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
 			jQuery('.stellarnav').stellarNav({
