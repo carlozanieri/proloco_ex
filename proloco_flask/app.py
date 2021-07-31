@@ -7,15 +7,17 @@ import sys
 import os
 import tempfile
 import flask
+from flask import  request
+from flask import url_for
 # Python2
 # import StringIO
 from io import StringIO
 from werkzeug.utils import secure_filename
-
+from Connect import Connect
 # whitelist of file extensions
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
-app = flask.Flask(__name__)
+app = flask.Flask(__name__, static_folder="static")
 
 @app.errorhandler(OSError)
 def handle_oserror(oserror):
@@ -31,16 +33,45 @@ def allowed_file(filename):
 @app.route("/")
 def entry_point():
     """ simple entry for test """
-    return flask.render_template('index.html',  tempdir=tempfile.gettempdir())
+    return flask.render_template('master.xhtml', luogo="index", pagina=Connect.body("", "index"), tempdir=tempfile.gettempdir(), menu=Connect.menu(""), submenu=Connect.submnu(""), submenu2=Connect.submnu2(""))
 
-@app.route("/flask")
-def flask():
+@app.route("/master")
+def master():
+    """ simple entry for test """
+    return flask.render_template('master.html',  tempdir=tempfile.gettempdir(), menu=Connect.menu(""), submenu=Connect.submnu(""), submenu2=Connect.submnu2(""))
+
+@app.route('/sanpiero')
+def sanpiero():
         """Handle the front-page."""
-        return flask.render_template('master.xhtml',  tempdir=tempfile.gettempdir())
+
+
+        return flask.render_template('master.xhtml', pagina = Connect.body("", "sanpiero"),luogo = "sanpiero",menu=Connect.menu(""), submenu=Connect.submnu("") )
+
+@app.route('/mugello')
+def mugello():
+        """Handle the front-page."""
+
+
+        return flask.render_template('master.xhtml', pagina = Connect.body("", "mugello"),luogo = "mugello",menu=Connect.menu(""), submenu=Connect.submnu("") )
+
 @app.route('/upload_form')
 def upload_form():
     """ show upload form with multiple scenarios """
     return flask.render_template('upload_form.html')
+
+@app.route('/slide', methods=["GET", "POST"])
+def slide():
+    luogo = request.args['luogo']
+    return flask.render_template('nivo.xhtml', luogo=luogo, slider=Connect.slider("", luogo))
+
+@app.route('/news-slider')
+def news():
+    return flask.render_template('news-slider.xhtml', pagina=Connect.body("", "sanpiero"), manifestazione="news")
+
+
+@app.route('/newss')
+def newss():
+    return flask.render_template('news.xhtml', pagina=Connect.body("", "sanpiero"), manifestazione="news", news=Connect.news("") )
 
 @app.route("/singleuploadchunked/<filename>", methods=["POST", "PUT"])
 def single_upload_chunked(filename=None):
@@ -188,5 +219,5 @@ if __name__ == "__main__" or __name__ == "main":
 
     # docker flask uwsgi starts itself
     if __name__ == "__main__":
-        port = int(os.getenv("PORT", 8080))
+        port = int(os.getenv("PORT", 8000))
         app.run(host='0.0.0.0', port=port)
