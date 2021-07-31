@@ -16,7 +16,7 @@
 		<link rel="shortcut icon" href="../favicon.ico"/>
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename ='menu_6/css/default.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename ='menu_6/css/component.css')}}" />
-		<script src="${tg.url('/menu_6/js/modernizr.custom.js')}"></script>
+		<script src="{{url_for('static', filename ='menu_6/js/modernizr.custom.js')}}"></script>
 		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename ='menu_6/css/default.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename ='menu_6/css/component.css')}}" />
@@ -94,9 +94,11 @@ body { height: 3200px; font-size: 16px; font-family: 'Exo 2', sans-serif; backgr
 
 			<div>
 				<div>
+
+				<iframe  width="100%" height="500 px" src=" {{ url_for('slide', luogo=luogo)}} " frameborder="0" style="padding-top:1%;"></iframe>
 				</div>
 
-{% if luogo == 'index' %}
+{% if luogo == "index" %}
 <div   style="float:right; margin-left:1%; margin-right:1%;">
 	<iframe  width="100%" height="500 px" src="/newss" frameborder="0" style="padding-top:1%;"></iframe>
 	 <iframe  width="100%" height="20%" src="{{url_for('static', filename = 'riquadro.html')}}" frameborder="0" style="padding-top:2%;"></iframe>
@@ -113,9 +115,9 @@ body { height: 3200px; font-size: 16px; font-family: 'Exo 2', sans-serif; backgr
 
 
 					<p style="text-align: justify;  color:#7e342d; margin-right:15%;margin-left:15%;">
-						{% if pagina[2] != 'index' %}
+
 				  		<img  class="zoom" src= "{{url_for('static', filename = 'img/')}}{{pagina[8]}}" width="12%" height="12%" alt="" style="float: left; margin: 15px 15px 15px 15px;"/>{{pagina[5]}}
-						{%endif%}
+
 					  <img class="zoom" src="{{url_for('static', filename = 'img/')}}{{pagina[12]}}" width="12%" height="12%" alt="" style="float: right; margin: 15px 15px 15px 15px;"/>{{pagina[10]}}
 
 					</p>
